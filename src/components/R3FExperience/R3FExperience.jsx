@@ -1,5 +1,5 @@
-import React, { useRef, useMemo } from "react";
-import { OrbitControls, useHelper } from "@react-three/drei";
+import React, { useRef, useMemo, useContext } from "react";
+import { OrbitControls } from "@react-three/drei";
 import { Perf } from "r3f-perf";
 import {
   RigidBody,
@@ -9,8 +9,12 @@ import {
 } from "@react-three/rapier";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { ThemeContext } from "../../App";
 
 export default function R3FExperience() {
+  const themes = useContext(ThemeContext);
+  const { theme } = themes;
+
   const cube = useRef();
   const twister = useRef();
   const cubes = useRef();
@@ -27,14 +31,14 @@ export default function R3FExperience() {
   useFrame((state) => {
     const time = state.clock.getElapsedTime();
 
-    const eulerRotation = new THREE.Euler(0, time * 3, 0);
+    const eulerRotation = new THREE.Euler(0, time * 3.5, 0);
     const quaternionRotation = new THREE.Quaternion();
     quaternionRotation.setFromEuler(eulerRotation);
     twister.current.setNextKinematicRotation(quaternionRotation);
 
     const angle = time * 0.5;
-    const x = Math.cos(angle) * 2;
-    const z = Math.sin(angle) * 2;
+    const x = Math.cos(angle) * 2.5;
+    const z = Math.sin(angle) * 2.5;
     twister.current.setNextKinematicTranslation({ x: x, y: -0.8, z: z });
   });
 
@@ -57,6 +61,10 @@ export default function R3FExperience() {
     return { positions, rotations, scales };
   }, []);
 
+  const purple = "#440bd4";
+  const lightTeal = "#7ECBC7";
+  const offWhite = "#E4DDEF";
+
   return (
     <>
       <Perf position="top-left" />
@@ -70,22 +78,28 @@ export default function R3FExperience() {
         <RigidBody colliders="ball">
           <mesh castShadow position={[-1.5, 2, 0]} restitution={0.5}>
             <sphereGeometry />
-            <meshStandardMaterial color="#440bd4" />
+            <meshStandardMaterial
+              color={theme === "dark" ? offWhite : purple}
+            />
           </mesh>
         </RigidBody>
 
         <RigidBody ref={cube} position={[1.5, 2, 0]} restitution={0.5}>
           <mesh castShadow onClick={cubeJump}>
             <boxGeometry />
-            <meshStandardMaterial color="#440bd4" />
+            <meshStandardMaterial
+              color={theme === "dark" ? offWhite : purple}
+            />
           </mesh>
           <CuboidCollider args={[0.5, 0.5, 0.5]} />
         </RigidBody>
 
         <RigidBody type="fixed">
           <mesh receiveShadow position-y={-1.25}>
-            <boxGeometry args={[9, 0.5, 9]} />
-            <meshStandardMaterial color="#7ECBC7" />
+            <boxGeometry args={[10, 0.5, 10]} />
+            <meshStandardMaterial
+              color={theme === "dark" ? purple : lightTeal}
+            />
           </mesh>
         </RigidBody>
         <RigidBody
@@ -96,7 +110,9 @@ export default function R3FExperience() {
         >
           <mesh castShadow scale={[0.4, 0.4, 3]}>
             <boxGeometry />
-            <meshStandardMaterial color="#440bd4" />
+            <meshStandardMaterial
+              color={theme === "dark" ? offWhite : purple}
+            />
           </mesh>
         </RigidBody>
         <RigidBody type="fixed">
@@ -117,7 +133,9 @@ export default function R3FExperience() {
             receiveShadow
           >
             <boxGeometry />
-            <meshStandardMaterial color="#E4DDEF" />
+            <meshStandardMaterial
+              color={theme === "dark" ? lightTeal : offWhite}
+            />
           </instancedMesh>
         </InstancedRigidBodies>
       </Physics>

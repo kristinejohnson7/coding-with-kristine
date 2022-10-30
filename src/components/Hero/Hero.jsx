@@ -2,6 +2,8 @@ import React from "react";
 import { Canvas } from "@react-three/fiber";
 import s from "./Hero.module.scss";
 import Button from "../Button/Button";
+import { ThemeContext } from "../../App";
+import { useContext } from "react";
 import R3FExperience from "../R3FExperience/R3FExperience";
 
 const cameraSettings = {
@@ -12,8 +14,11 @@ const cameraSettings = {
 };
 
 export default function Hero() {
+  const themes = useContext(ThemeContext);
+  const { theme } = themes;
+
   return (
-    <section className={s.hero}>
+    <section className={s.hero} id={s[`${theme}`]}>
       <div className={s.heroText}>
         <h1>
           {" "}

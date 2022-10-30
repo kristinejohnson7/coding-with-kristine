@@ -1,4 +1,3 @@
-@import "/src/sassStyles/mixins.scss";
 @import "/src/sassStyles/variables";
 
 .navbar {
@@ -24,7 +23,7 @@
     .navBarOptions {
       display: flex;
       font-family: "Poppins", sans-serif;
-      // font-weight: 400;
+      font-weight: 500;
       gap: 1rem;
       margin-top: 2rem;
       text-transform: uppercase;
@@ -36,6 +35,22 @@
           color: $primary-light;
         }
       }
+
+      .react-switch-bg div {
+        align-items: center;
+        display: flex;
+        height: 20px;
+        justify-content: center;
+        width: 20px;
+
+        .checkIcon {
+          width: 70%;
+        }
+      }
     }
   }
+}
+
+#dark .navBarOptions {
+  color: $white;
 }
