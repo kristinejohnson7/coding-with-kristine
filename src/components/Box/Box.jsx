@@ -16,7 +16,7 @@ export default function Box({ position = [0, 0, 0], ...props }) {
       (1.5 + Math.sin(state.clock.getElapsedTime() * factor)) / 2
     );
     ref.current.position.y = position[1] + t * 3;
-    // ref.current.scale.y = 1 + t;
+    ref.current.scale.y = 1 + t * 1.1;
     // ref.current.scale.x = 0.1 + t;
   });
 
@@ -27,11 +27,11 @@ export default function Box({ position = [0, 0, 0], ...props }) {
       {...props}
       castShadow
       receiveShadow
-      scale={[0.87, 0.87, 0.87]}
+      scale={Math.random() * 0.5 + 0.5}
       onPointerOver={(event) => setHover(true)}
       onPointerOut={(event) => setHover(false)}
     >
-      <boxGeometry attach="geometry" args={[1, 1, 1]} />
+      <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
       <meshPhongMaterial
         attach="material"
         color={hovered ? "pink" : "#6C1EED"}
