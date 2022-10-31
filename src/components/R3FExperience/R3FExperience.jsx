@@ -1,6 +1,6 @@
 import React, { useRef, useMemo, useContext } from "react";
 import { OrbitControls } from "@react-three/drei";
-import { Perf } from "r3f-perf";
+// import { Perf } from "r3f-perf";
 import {
   RigidBody,
   Physics,
@@ -67,7 +67,7 @@ export default function R3FExperience() {
 
   return (
     <>
-      <Perf position="top-left" />
+      {/* <Perf position="top-left" /> */}
 
       <OrbitControls makeDefault minDistance={13} />
 

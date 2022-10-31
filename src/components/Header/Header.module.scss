@@ -1,0 +1,13 @@
+@import "/src/sassStyles/variables";
+
+h2 {
+  color: $primary-light;
+  font-family: "Roboto Mono", monospace;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+
+  &#dark {
+    color: $secondary-dark;
+  }
+}
