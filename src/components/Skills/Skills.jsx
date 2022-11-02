@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
-import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import s from "./Skills.module.scss";
 import {
-  CircularProgressbar,
   CircularProgressbarWithChildren,
   buildStyles,
 } from "react-circular-progressbar";
@@ -16,7 +14,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Navigation, Pagination, FreeMode, Scrollbar, A11y } from "swiper";
+import { Pagination, FreeMode } from "swiper";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 

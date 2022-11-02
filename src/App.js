@@ -3,6 +3,8 @@ import NavBar from "./components/NavBar/NavBar";
 import Hero from "./components/Hero/Hero";
 import { createContext, useState } from "react";
 import Skills from "./components/Skills/Skills";
+import About from "./components/About/About";
+import Portfolio from "./components/Portfolio/Portfolio";
 
 export const ThemeContext = createContext(null);
 
@@ -18,6 +20,8 @@ function App() {
       <div id={theme} className="app">
         <NavBar />
         <Hero />
+        <About />
+        <Portfolio />
         <Skills />
       </div>
     </ThemeContext.Provider>

@@ -6,6 +6,7 @@
   align-items: center;
   justify-content: space-evenly;
   padding-top: 90px;
+  padding-bottom: 1rem;
 
   &#dark {
     h1 {
@@ -21,7 +22,7 @@
     color: $primary-light;
     font-family: "Roboto Mono", monospace;
     font-size: 2rem;
-    padding-left: 2rem;
+    padding-left: 5rem;
 
     h1 {
       margin-bottom: 10px;
