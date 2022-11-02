@@ -1,0 +1,81 @@
+@import "/src/sassStyles/variables";
+
+.aboutContainer {
+  background: rgba(126, 203, 199, 0.2);
+
+  .aboutWrapper {
+    position: relative;
+    margin: 0 auto;
+    max-width: 800px;
+    min-height: 37rem;
+
+    .about {
+      background-color: rgba(255, 255, 255, 0.7);
+      border: 3px solid $secondary-dark;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 5rem;
+      padding: 2rem;
+      position: absolute;
+      top: -2rem;
+      border-radius: 1rem;
+
+      &#dark {
+        background-color: rgba(0, 0, 0, 0.5);
+        .aboutText {
+          h2,
+          p {
+            color: $white;
+
+            span {
+              color: $secondary-dark;
+            }
+          }
+
+          hr {
+            border-color: $primary-light;
+          }
+        }
+      }
+
+      .aboutPhoto {
+        width: 370px;
+
+        img {
+          border-radius: 3px;
+          border-bottom-left-radius: 8rem;
+        }
+      }
+
+      .aboutText {
+        max-width: 500px;
+
+        h2,
+        p {
+          color: $black;
+          text-align: left;
+
+          span {
+            color: $primary-light;
+          }
+        }
+
+        hr {
+          border: 3px solid $secondary-dark;
+          margin-bottom: 1.5rem;
+          margin-left: -5rem;
+          width: 350px;
+        }
+
+        p {
+          margin-bottom: 1rem;
+
+          &:last-of-type {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}

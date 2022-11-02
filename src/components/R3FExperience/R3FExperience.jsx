@@ -42,7 +42,7 @@ export default function R3FExperience() {
     twister.current.setNextKinematicTranslation({ x: x, y: -0.8, z: z });
   });
 
-  const cubesCount = 20;
+  const cubesCount = 30;
   const cubeTransforms = useMemo(() => {
     const positions = [];
     const rotations = [];
