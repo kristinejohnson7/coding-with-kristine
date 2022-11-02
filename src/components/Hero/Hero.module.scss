@@ -1,0 +1,45 @@
+@import "/src/sassStyles/variables";
+
+.hero {
+  height: 45rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 90px;
+
+  &#dark {
+    h1 {
+      color: $secondary-dark;
+
+      span {
+        color: $white;
+      }
+    }
+  }
+
+  .heroText {
+    color: $primary-light;
+    font-family: "Roboto Mono", monospace;
+    font-size: 2rem;
+    padding-left: 2rem;
+
+    h1 {
+      margin-bottom: 10px;
+
+      span {
+        color: $black;
+        font-family: "Poppins";
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .canvas {
+    height: 100%;
+    max-width: 670px;
+    width: 70%;
+    padding-bottom: 3.5rem;
+  }
+}

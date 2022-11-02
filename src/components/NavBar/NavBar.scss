@@ -1,0 +1,56 @@
+@import "/src/sassStyles/variables";
+
+.navbar {
+  // background-color: #fff;
+  height: 9.5rem;
+  position: fixed;
+  width: 100vw;
+  z-index: 2500;
+
+  .navHeader {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0.438rem 1rem;
+    height: inherit;
+
+    .navLogo {
+      width: 10rem;
+    }
+
+    .navBarOptions {
+      display: flex;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      gap: 1rem;
+      margin-top: 2rem;
+      text-transform: uppercase;
+
+      li {
+        // cursor: pointer;
+
+        &:hover {
+          color: $primary-light;
+        }
+      }
+
+      .react-switch-bg div {
+        align-items: center;
+        display: flex;
+        height: 20px;
+        justify-content: center;
+        width: 20px;
+
+        .checkIcon {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+#dark .navBarOptions {
+  color: $white;
+}
