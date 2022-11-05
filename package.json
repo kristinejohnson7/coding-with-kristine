@@ -21,6 +21,7 @@
     "react-swiper": "^0.1.5",
     "react-switch": "^7.0.0",
     "react-visibility-sensor": "^5.1.1",
+    "styled-components": "^5.3.6",
     "swiper": "^8.4.4",
     "three": "^0.145.0",
     "three-orbit-controls": "^82.1.0",

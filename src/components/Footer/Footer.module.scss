@@ -1,0 +1,67 @@
+@import "/src/sassStyles/variables";
+
+.footer {
+  background-color: $teal-lighten;
+  padding-top: 3rem;
+
+  .footerMain {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-bottom: 2.5rem;
+    max-width: 1000px;
+    padding: 1.5rem 3.5rem;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+    .logo {
+      width: 150px;
+    }
+
+    .options {
+      display: flex;
+      gap: 1rem;
+      margin-top: 6px;
+
+      .pageOptions {
+        margin-top: 0.7rem;
+      }
+
+      ul li {
+        align-items: center;
+        display: flex;
+        font-size: 0.9rem;
+        letter-spacing: 1.3px;
+        margin-bottom: 1rem;
+
+        &:hover {
+          color: $secondary-dark;
+        }
+
+        .icon {
+          align-items: center;
+          background: $primary-light;
+          border-radius: 50%;
+          color: $white;
+          display: flex;
+          height: 40px;
+          justify-content: center;
+          margin-right: 10px;
+          padding: 10px;
+          width: 40px;
+        }
+
+        a {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
