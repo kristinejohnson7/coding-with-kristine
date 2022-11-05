@@ -5,6 +5,7 @@ import { createContext, useState } from "react";
 import Skills from "./components/Skills/Skills";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
+import Footer from "./components/Footer/Footer";
 
 export const ThemeContext = createContext(null);
 
@@ -23,6 +24,7 @@ function App() {
         <About />
         <Portfolio />
         <Skills />
+        <Footer />
       </div>
     </ThemeContext.Provider>
   );
