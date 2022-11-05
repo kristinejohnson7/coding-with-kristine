@@ -6,6 +6,7 @@ import Skills from "./components/Skills/Skills";
 import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Footer from "./components/Footer/Footer";
+import Contact from "./components/Contact/Contact";
 
 export const ThemeContext = createContext(null);
 
@@ -24,6 +25,7 @@ function App() {
         <About />
         <Portfolio />
         <Skills />
+        <Contact />
         <Footer />
       </div>
     </ThemeContext.Provider>

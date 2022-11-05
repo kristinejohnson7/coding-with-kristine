@@ -1,0 +1,68 @@
+@import "/src/sassStyles/variables";
+
+.contact {
+  padding-bottom: 9rem;
+
+  h2 {
+    padding-bottom: 2rem;
+  }
+
+  .contactWrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+
+    &#dark {
+      .contactCard {
+        background-color: $pure-black;
+      }
+
+      form {
+        color: $white;
+
+        input,
+        textarea {
+          background-color: $pure-black;
+        }
+      }
+    }
+
+    .contactCard {
+      align-items: center;
+      background-color: $primary-light;
+      border-radius: 3px;
+      display: flex;
+      color: $white;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .line {
+      border-left: 3px solid $secondary-dark;
+      height: 500px;
+    }
+
+    form {
+      label {
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      input,
+      textarea {
+        border: none;
+        color: $white;
+        display: block;
+        background-color: $primary-light;
+        margin-top: 0.5rem;
+        padding: 0.5rem 2.5rem 0.5rem 1.5rem;
+      }
+    }
+  }
+}
