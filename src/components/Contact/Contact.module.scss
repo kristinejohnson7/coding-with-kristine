@@ -53,42 +53,46 @@
       height: 500px;
     }
 
-    .form form {
-      label {
-        display: block;
-        margin-bottom: 1rem;
-      }
+    .form {
+      z-index: 100;
 
-      input,
-      textarea {
-        border: none;
-        border-radius: 3px;
-        color: $white;
-        display: block;
-        background-color: $primary-light;
-        margin-top: 0.5rem;
-        padding: 0.5rem 2.5rem 0.5rem 1.5rem;
-        width: 300px;
-      }
+      form {
+        label {
+          display: block;
+          margin-bottom: 1rem;
+        }
 
-      .submitBtn {
-        background-color: transparent;
-        border: 2px solid $primary-light;
-        color: $pure-black;
-        box-shadow: inset rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
-        transition: ease-out 0.3s;
-        outline: none;
-        cursor: pointer;
-        font-family: "Roboto Mono", monospace;
-        font-size: 1rem;
-        overflow: hidden;
-        position: relative;
-        padding: 0.7rem;
-        width: 300px;
-
-        &:hover {
+        input,
+        textarea {
+          border: none;
+          border-radius: 3px;
           color: $white;
-          box-shadow: inset 300px 0 0 0 $secondary-dark;
+          display: block;
+          background-color: $primary-light;
+          margin-top: 0.5rem;
+          padding: 0.5rem 2.5rem 0.5rem 1.5rem;
+          width: 300px;
+        }
+
+        .submitBtn {
+          background-color: transparent;
+          border: 2px solid $primary-light;
+          color: $pure-black;
+          box-shadow: inset rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+          transition: ease-out 0.3s;
+          outline: none;
+          cursor: pointer;
+          font-family: "Roboto Mono", monospace;
+          font-size: 1rem;
+          overflow: hidden;
+          position: relative;
+          padding: 0.7rem;
+          width: 300px;
+
+          &:hover {
+            color: $white;
+            box-shadow: inset 300px 0 0 0 $secondary-dark;
+          }
         }
       }
     }
