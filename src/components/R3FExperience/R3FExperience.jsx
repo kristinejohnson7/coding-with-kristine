@@ -1,6 +1,5 @@
 import React, { useRef, useMemo, useContext } from "react";
 import { OrbitControls } from "@react-three/drei";
-// import { Perf } from "r3f-perf";
 import {
   RigidBody,
   Physics,
@@ -67,9 +66,7 @@ export default function R3FExperience() {
 
   return (
     <>
-      {/* <Perf position="top-left" /> */}
-
-      <OrbitControls makeDefault minDistance={13} />
+      <OrbitControls makeDefault minDistance={12} />
 
       <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
       <ambientLight intensity={0.5} />

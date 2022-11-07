@@ -7,11 +7,12 @@ import About from "./components/About/About";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
+import Testimonials from "./components/Testimonials/Testimonials";
 
 export const ThemeContext = createContext(null);
 
 function App() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("light");
   console.log("theme", theme);
 
   const toggleTheme = () => {
@@ -25,6 +26,7 @@ function App() {
         <About />
         <Portfolio />
         <Skills />
+        <Testimonials />
         <Contact />
         <Footer />
       </div>

@@ -21,7 +21,6 @@ export default function Hero() {
     <section className={s.hero} id={s[`${theme}`]}>
       <div className={s.heroText}>
         <h1>
-          {" "}
           <span>Creative</span>
           <br /> Web Development
         </h1>

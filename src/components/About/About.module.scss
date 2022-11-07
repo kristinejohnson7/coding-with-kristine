@@ -19,7 +19,7 @@
       padding: 2rem;
       position: absolute;
       top: -2rem;
-      border-radius: 1rem;
+      border-radius: 10px;
 
       &#dark {
         background-color: rgba(0, 0, 0, 0.5);
@@ -77,5 +77,54 @@
         }
       }
     }
+  }
+
+  @media screen and (max-width: 900px) {
+    padding-bottom: 17rem;
+
+    .aboutWrapper {
+      display: flex;
+      justify-content: center;
+
+      .about {
+        align-items: center;
+        flex-direction: column;
+        top: -2.5rem;
+
+        .aboutPhoto {
+          width: 200px;
+        }
+
+        .aboutText {
+          margin-top: -4rem;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .aboutWrapper .about {
+      width: 100%;
+
+      .aboutText hr {
+        margin-left: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width: 530px) {
+    padding-bottom: 23rem;
+
+    .aboutWrapper .about .aboutText hr {
+      width: 230px;
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    padding-bottom: 32rem;
+  }
+
+  @media screen and (max-width: 410px) {
+    padding-bottom: 38rem;
   }
 }

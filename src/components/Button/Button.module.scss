@@ -3,20 +3,34 @@
 .btn {
   background-color: transparent;
   border: 2px solid $primary-light;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  box-shadow: inset rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  transition: ease-out 0.3s;
+  outline: none;
   cursor: pointer;
   font-family: "Roboto Mono", monospace;
   font-size: 1rem;
+  overflow: hidden;
+  position: relative;
   padding: 0.7rem;
+  width: 150px;
 
   &:hover {
     color: $white;
-    background-color: $primary-light;
+    box-shadow: inset 150px 0 0 0 $secondary-dark;
   }
 
   &#dark {
     color: $white;
     border: 2px solid $secondary-dark;
+  }
+
+  &.active {
+    background: linear-gradient(
+      45deg,
+      rgba(127, 17, 224, 0.7),
+      rgba(3, 252, 248, 0.7)
+    );
+    box-shadow: none;
+    color: $white;
   }
 }

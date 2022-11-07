@@ -39,7 +39,7 @@ export default function NavBar() {
           <ul className="navBarOptions">
             <li>Home</li>
             <li>Skills</li>
-            <li>About</li>
+            <li onClick={() => window.location.replace("/#about")}>About</li>
             <li>Portfolio</li>
             <li>Contact</li>
             <div>
