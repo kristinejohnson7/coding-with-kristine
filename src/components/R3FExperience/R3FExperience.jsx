@@ -71,7 +71,7 @@ export default function R3FExperience() {
       <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
       <ambientLight intensity={0.5} />
       <pointLight position={[1, 3, 4]} color="teal" intensity={5.5} />
-      <Physics>
+      <Physics rotation-x={Math.PI * -0.5}>
         <RigidBody colliders="ball">
           <mesh castShadow position={[-1.5, 2, 0]} restitution={0.5}>
             <sphereGeometry />
@@ -81,7 +81,7 @@ export default function R3FExperience() {
           </mesh>
         </RigidBody>
 
-        <RigidBody ref={cube} position={[1.5, 2, 0]} restitution={0.5}>
+        <RigidBody ref={cube} position={[1.5, 3, 0]} restitution={0.5}>
           <mesh castShadow onClick={cubeJump}>
             <boxGeometry />
             <meshStandardMaterial
@@ -105,7 +105,7 @@ export default function R3FExperience() {
           type="kinematicPosition"
           ref={twister}
         >
-          <mesh castShadow scale={[0.4, 0.4, 3]}>
+          <mesh castShadow scale={[0.6, 0.6, 4]}>
             <boxGeometry />
             <meshStandardMaterial
               color={theme === "dark" ? offWhite : purple}
