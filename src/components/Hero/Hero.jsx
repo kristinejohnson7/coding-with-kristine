@@ -28,7 +28,7 @@ export default function Hero() {
       </div>
       <div className={s.canvas}>
         <Canvas camera={cameraSettings} shadows>
-          <R3FExperience />
+          <R3FExperience rotation-x={Math.PI * -0.5} />
         </Canvas>
       </div>
     </section>
