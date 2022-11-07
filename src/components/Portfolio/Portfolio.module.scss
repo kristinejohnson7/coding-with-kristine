@@ -14,10 +14,6 @@
       &:last-child {
         border-left: none;
       }
-
-      &:nth-child(2) {
-        border-right: none;
-      }
     }
 
     .portfolioIntroText {
@@ -38,6 +34,7 @@
 
     button {
       padding: 1rem 4rem;
+      width: 250px;
 
       &:first-child {
         border-bottom-left-radius: 2rem;
@@ -51,17 +48,15 @@
         border-left: none;
       }
 
-      &:nth-child(2) {
-        border-right: none;
-      }
-
       &:hover,
-      :active {
+      &.focus {
         background: linear-gradient(
           45deg,
           rgba(127, 17, 224, 0.7),
           rgba(3, 252, 248, 0.7)
         );
+        box-shadow: none;
+        color: $white;
       }
     }
   }
@@ -89,6 +84,42 @@
 
       .portfolioText {
         position: relative;
+      }
+    }
+  }
+
+  @media screen and (max-width: 725px) {
+    &#dark {
+      button {
+        &:first-child {
+          border-right: 2px solid $secondary-dark;
+        }
+
+        &:last-child {
+          border-left: 2px solid $secondary-dark;
+        }
+      }
+    }
+
+    .portfolioFilter {
+      align-items: center;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      button {
+        width: 75%;
+
+        &:first-child {
+          border-bottom-left-radius: 0;
+          border-top-left-radius: 0;
+          border-right: 2px solid $primary-light;
+        }
+
+        &:last-child {
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+          border-left: 2px solid $primary-light;
+        }
       }
     }
   }

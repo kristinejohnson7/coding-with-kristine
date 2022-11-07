@@ -25,6 +25,11 @@
         textarea {
           background-color: $pure-black;
         }
+
+        .submitBtn {
+          color: $white;
+          border: 2px solid $secondary-dark;
+        }
       }
     }
 
@@ -48,7 +53,7 @@
       height: 500px;
     }
 
-    form {
+    .form form {
       label {
         display: block;
         margin-bottom: 1rem;
@@ -63,7 +68,77 @@
         background-color: $primary-light;
         margin-top: 0.5rem;
         padding: 0.5rem 2.5rem 0.5rem 1.5rem;
+        width: 300px;
       }
+
+      .submitBtn {
+        background-color: transparent;
+        border: 2px solid $primary-light;
+        color: $pure-black;
+        box-shadow: inset rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        transition: ease-out 0.3s;
+        outline: none;
+        cursor: pointer;
+        font-family: "Roboto Mono", monospace;
+        font-size: 1rem;
+        overflow: hidden;
+        position: relative;
+        padding: 0.7rem;
+        width: 300px;
+
+        &:hover {
+          color: $white;
+          box-shadow: inset 300px 0 0 0 $secondary-dark;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 890px) {
+    .contactWrapper {
+      flex-direction: column;
+      gap: 3rem;
+
+      .cards {
+        width: 55%;
+      }
+
+      .line {
+        border-top: 3px solid #7ecbc7;
+        border-left: none;
+        height: 0;
+        width: 75%;
+      }
+
+      .form {
+        width: 65%;
+
+        form {
+          input,
+          textarea {
+            width: 100%;
+          }
+
+          .submitBtn {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 675px) {
+    .contactWrapper {
+      .cards,
+      .form {
+        width: 85%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .contactWrapper .cards .contactCard .email {
+      word-break: break-word;
     }
   }
 }

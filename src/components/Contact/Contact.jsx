@@ -11,14 +11,14 @@ export default function Contact() {
     <section className={s.contact}>
       <Header content="Contact" />
       <div className={s.contactWrapper} id={s[`${theme}`]}>
-        <div>
+        <div className={s.cards}>
           <div className={s.contactCard}>
             <i class="fa-solid fa-phone fa-lg"></i>
             <p>502-930-9252</p>
           </div>
           <div className={s.contactCard}>
             <i class="fa-solid fa-envelope fa-lg"></i>
-            <p>kristine@codingwithkristine.com</p>
+            <p className={s.email}>kristine@codingwithkristine.com</p>
           </div>
           <div className={s.contactCard}>
             <i class="fa-solid fa-location-dot fa-lg"></i>
@@ -26,15 +26,24 @@ export default function Contact() {
           </div>
         </div>
         <div className={s.line}></div>
-        <div>
-          <form action="">
+        <div className={s.form}>
+          <form
+            action="https://getform.io/f/6e810cc0-5823-499f-b1fd-7b27ccdf9600"
+            method="POST"
+            target="_blank"
+          >
+            <input
+              type="hidden"
+              id="captchaResponse"
+              name="g-recaptcha-response"
+            />
             <label htmlFor="name">
               Your Name
               <input type="text" id="name" />
             </label>
             <label htmlFor="email">
               Your Email
-              <input type="text" id="email" />
+              <input type="email" id="email" />
             </label>
             <label htmlFor="message">
               Your Message
@@ -45,6 +54,7 @@ export default function Contact() {
                 rows="6"
               ></textarea>
             </label>
+            <input type="submit" className={s.submitBtn} />
           </form>
         </div>
       </div>

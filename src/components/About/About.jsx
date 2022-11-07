@@ -8,7 +8,7 @@ export default function About() {
   const { theme } = themes;
 
   return (
-    <section className={s.aboutContainer}>
+    <section className={s.aboutContainer} id="about">
       <div className={s.aboutWrapper}>
         <div className={s.about} id={s[`${theme}`]}>
           <div className={s.aboutPhoto}>
