@@ -65,8 +65,8 @@ const CardLink = styled(motion.div)`
   ${(props) =>
     props.isCardOpened &&
     css`
-      width: min(40rem, 95%);
-      height: 500px;
+      width: 70%;
+      height: 60%;
       overflow-y: auto;
       overflow-x: hidden;
       position: fixed;
@@ -75,26 +75,27 @@ const CardLink = styled(motion.div)`
       bottom: 0;
       left: 0;
       margin: auto;
-      z-index: 10;
+      z-index: 1000000;
       padding: 2rem;
       display: flex;
       justify-content: flex-start;
       flex-direction: column;
-      background: black;
+      background: #262626;
     `}
 `;
 
 const CardHeader = styled(motion.h2)`
   margin: 0.5rem 0;
-  font-size: 3em;
+  font-size: 3rem;
   font-weight: 700;
   color: white;
 `;
 
 const CardDescription = styled(motion.p)`
-  font-weight: 100;
-  font-size: 1.5em;
+  font-weight: 300;
+  font-size: 1.2rem;
   color: #ffffff;
+  margin-top: 1.3rem;
 `;
 
 const CardImage = styled(motion.img)`

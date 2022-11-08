@@ -66,26 +66,6 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-
-    .portfolioCard {
-      min-height: 270px;
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 24px;
-      padding: 2rem;
-      cursor: pointer;
-
-      .cardText {
-        // background-color: rgba(255, 255, 255, 0.3);
-        border-radius: 7px;
-        // color: $primary-light;
-        padding: 0.5rem;
-      }
-
-      .portfolioText {
-        position: relative;
-      }
-    }
   }
 
   @media screen and (max-width: 725px) {

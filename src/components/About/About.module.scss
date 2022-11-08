@@ -2,6 +2,7 @@
 
 .aboutContainer {
   background: rgba(126, 203, 199, 0.2);
+  margin-top: 5rem;
 
   .aboutWrapper {
     position: relative;
@@ -22,7 +23,7 @@
       border-radius: 10px;
 
       &#dark {
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.6);
         .aboutText {
           h2,
           p {
