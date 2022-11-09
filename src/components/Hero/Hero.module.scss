@@ -1,12 +1,14 @@
 @import "/src/sassStyles/variables";
 
 .hero {
-  height: 49rem;
+  // height: 56rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding-top: 90px;
-  padding-bottom: 1rem;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
 
   &#dark {
     h1 {
@@ -38,10 +40,11 @@
   }
 
   .canvas {
-    height: 100%;
-    max-width: 670px;
-    width: 70%;
-    padding-bottom: 3.5rem;
+    margin-top: 4rem;
+    height: 47rem;
+    // max-width: 670px;
+    width: 100%;
+    padding-bottom: 0;
   }
 
   @media screen and (max-width: 900px) {
