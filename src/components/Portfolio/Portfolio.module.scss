@@ -24,7 +24,9 @@
   .portfolioIntroText {
     font-size: 1.1rem;
     line-height: 1.7;
-    margin-bottom: 2rem;
+    max-width: 855px;
+    margin: 0 auto 2rem;
+    text-align: justify;
   }
 
   .portfolioFilter {
@@ -34,17 +36,17 @@
 
     button {
       padding: 1rem 4rem;
-      width: 250px;
+      width: 285px;
 
       &:first-child {
-        border-bottom-left-radius: 2rem;
-        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 7px;
+        border-top-left-radius: 7px;
         border-right: none;
       }
 
       &:last-child {
-        border-bottom-right-radius: 2rem;
-        border-top-right-radius: 2rem;
+        border-bottom-right-radius: 7px;
+        border-top-right-radius: 7px;
         border-left: none;
       }
 
@@ -88,16 +90,13 @@
 
       button {
         width: 75%;
+        border-radius: 7px;
 
         &:first-child {
-          border-bottom-left-radius: 0;
-          border-top-left-radius: 0;
           border-right: 2px solid $primary-light;
         }
 
         &:last-child {
-          border-bottom-right-radius: 0;
-          border-top-right-radius: 0;
           border-left: 2px solid $primary-light;
         }
       }

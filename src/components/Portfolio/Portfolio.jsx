@@ -1,11 +1,17 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Header from "../Header/Header";
 import s from "./Portfolio.module.scss";
-import { motion } from "framer-motion";
 import { portfolio } from "../../constants/portfolio";
 import Button from "../Button/Button";
 import Card from "./Card";
 import { ThemeContext } from "../../App";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const boxVariant = {
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
+  hidden: { opacity: 0, scale: 0 },
+};
 
 export default function Portfolio() {
   const themes = useContext(ThemeContext);
@@ -14,6 +20,15 @@ export default function Portfolio() {
     portfolio.filter((item) => item.type === "react")
   );
   const [portfolioType, setPortfolioType] = useState("react");
+
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
 
   const portfolioData = filteredPortfolio.map((item, index) => {
     return (
@@ -32,7 +47,14 @@ export default function Portfolio() {
   };
 
   return (
-    <section className={s.portfolio} id={s[`${theme}`]}>
+    <motion.section
+      ref={ref}
+      variants={boxVariant}
+      initial="hidden"
+      animate={control}
+      className={s.portfolio}
+      id={s[`${theme}`]}
+    >
       <div className={s.portfolioHeader}>
         <Header content="Portfolio" />
         <p className={s.portfolioIntroText}>
@@ -76,6 +98,7 @@ export default function Portfolio() {
       </div>
       <motion.div
         className={s.portfolioItems}
+        layout
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -84,6 +107,6 @@ export default function Portfolio() {
       >
         {portfolioData}
       </motion.div>
-    </section>
+    </motion.section>
   );
 }

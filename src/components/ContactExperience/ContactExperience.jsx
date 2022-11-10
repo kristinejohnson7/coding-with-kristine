@@ -10,7 +10,7 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { ThemeContext } from "../../App";
 
-export default function R3FExperience() {
+export default function ContactExperience() {
   const themes = useContext(ThemeContext);
   const { theme } = themes;
 
@@ -66,7 +66,7 @@ export default function R3FExperience() {
 
   return (
     <>
-      <OrbitControls makeDefault minDistance={12} />
+      {/* <OrbitControls makeDefault minDistance={12} /> */}
 
       <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
       <ambientLight intensity={0.5} />

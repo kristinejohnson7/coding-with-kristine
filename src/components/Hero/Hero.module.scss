@@ -1,7 +1,6 @@
 @import "/src/sassStyles/variables";
 
 .hero {
-  // height: 56rem;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -9,41 +8,14 @@
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
-
-  &#dark {
-    h1 {
-      color: $secondary-dark;
-
-      span {
-        color: $white;
-      }
-    }
-  }
-
-  .heroText {
-    color: $primary-light;
-    font-family: "Roboto Mono", monospace;
-    font-size: 2rem;
-    padding-left: 5rem;
-
-    h1 {
-      margin-bottom: 10px;
-
-      span {
-        color: $black;
-        font-family: "Poppins";
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        text-transform: uppercase;
-      }
-    }
-  }
+  border-left: 120px solid $secondary-dark transparent;
+  border-right: 120px solid $secondary-dark transparent;
 
   .canvas {
-    margin-top: 4rem;
+    margin-top: 7rem;
     height: 47rem;
-    // max-width: 670px;
-    width: 100%;
+    pointer-events: none;
+    width: 80%;
     padding-bottom: 0;
   }
 
@@ -61,10 +33,6 @@
   }
 
   @media screen and (max-width: 625px) {
-    .heroText {
-      padding-left: 1rem;
-    }
-
     .canvas {
       width: 100%;
       margin-top: -50px;
@@ -73,9 +41,5 @@
 
   @media screen and (max-width: 515px) {
     margin-bottom: 10.5rem;
-
-    .heroText {
-      font-size: 1.7rem;
-    }
   }
 }

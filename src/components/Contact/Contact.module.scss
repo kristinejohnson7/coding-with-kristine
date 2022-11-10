@@ -14,10 +14,6 @@
     gap: 5rem;
 
     &#dark {
-      .contactCard {
-        background-color: $pure-black;
-      }
-
       form {
         color: $white;
 
@@ -33,19 +29,9 @@
       }
     }
 
-    .contactCard {
-      align-items: center;
-      background-color: $primary-light;
-      border-radius: 3px;
-      display: flex;
-      color: $white;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-      padding: 1.5rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+    .threeExperience {
+      height: 24rem;
+      width: 30rem;
     }
 
     .line {
@@ -103,10 +89,6 @@
       flex-direction: column;
       gap: 3rem;
 
-      .cards {
-        width: 55%;
-      }
-
       .line {
         border-top: 3px solid #7ecbc7;
         border-left: none;
@@ -133,16 +115,9 @@
 
   @media screen and (max-width: 675px) {
     .contactWrapper {
-      .cards,
       .form {
         width: 85%;
       }
-    }
-  }
-
-  @media screen and (max-width: 500px) {
-    .contactWrapper .cards .contactCard .email {
-      word-break: break-word;
     }
   }
 }

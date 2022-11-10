@@ -13,7 +13,7 @@ function Box({ color }) {
     let v = new Vector3(
       (Math.random() * 2 - 1) * 3,
       Math.random() * 2.5 + 0.1,
-      (Math.random() * 2 - 1) * 15
+      (Math.random() * 2 - 1) * 6
     );
     // if (v.x < 0) v.x -= 1.75;
     // if (v.x > 0) v.x += 1.75;
@@ -41,7 +41,7 @@ function Box({ color }) {
 export function Boxes() {
   const [arr] = useState(() => {
     let a = [];
-    for (let i = 0; i < 120; i++) a.push(0);
+    for (let i = 0; i < 50; i++) a.push(0);
     return a;
   });
   return (
