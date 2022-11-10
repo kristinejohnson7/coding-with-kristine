@@ -1,14 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import s from "./About.module.scss";
 import headshot from "../../assets/kphoto.jpg";
 import { ThemeContext } from "../../App";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const boxVariant = {
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
+  hidden: { opacity: 0, scale: 0 },
+};
 
 export default function About() {
   const themes = useContext(ThemeContext);
   const { theme } = themes;
 
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
   return (
-    <section className={s.aboutContainer} id="about">
+    <motion.section
+      ref={ref}
+      variants={boxVariant}
+      initial="hidden"
+      animate={control}
+      className={s.aboutContainer}
+      id="about"
+    >
       <div className={s.aboutWrapper}>
         <div className={s.about} id={s[`${theme}`]}>
           <div className={s.aboutPhoto}>
@@ -41,6 +64,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

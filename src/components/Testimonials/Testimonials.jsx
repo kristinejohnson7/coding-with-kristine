@@ -1,10 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import styled from "styled-components";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import s from "./Testimonials.module.scss";
 import testimonials from "../../constants/testimonials";
 import Header from "../Header/Header";
 import { ThemeContext } from "../../App";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const TestimonialSectionStyles = styled.div`
   .fade-enter {
@@ -31,12 +33,26 @@ const TestimonialSectionStyles = styled.div`
   }
 `;
 
+const boxVariant = {
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
+  hidden: { opacity: 0, scale: 0 },
+};
+
 export default function Testimonials() {
   const themes = useContext(ThemeContext);
   const { theme } = themes;
 
   const [activeIndex, setActiveIndex] = useState(0);
   const activeSlide = testimonials[activeIndex];
+
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
 
   function handleNext() {
     if (activeIndex >= testimonials.length - 1) {
@@ -54,7 +70,14 @@ export default function Testimonials() {
   }
 
   return (
-    <section className={s.testimonials} id={s[`${theme}`]}>
+    <motion.section
+      ref={ref}
+      variants={boxVariant}
+      initial="hidden"
+      animate={control}
+      className={s.testimonials}
+      id={s[`${theme}`]}
+    >
       <TestimonialSectionStyles>
         <Header content="Testimonials" />
         <div className={s.testimonialWrapper}>
@@ -96,6 +119,6 @@ export default function Testimonials() {
           </div>
         </div>
       </TestimonialSectionStyles>
-    </section>
+    </motion.section>
   );
 }

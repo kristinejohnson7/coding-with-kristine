@@ -14,7 +14,6 @@ export default function Card({ title, description, imgSrc }) {
         ref={card}
         isCardOpened={isCardOpened}
         className={s.cardLink}
-        layout
         onClick={() => {
           setIsCardOpened(true);
           if (!isCardOpened) {
@@ -70,6 +69,7 @@ const CardLink = styled(motion.div)`
       overflow-y: auto;
       overflow-x: hidden;
       position: fixed;
+      cursor: unset;
       top: 0;
       right: 0;
       bottom: 0;
@@ -102,6 +102,7 @@ const CardImage = styled(motion.img)`
   width: 300px;
   height: 237px;
   margin: 0 auto;
+  border-radius: 10px;
 `;
 
 const CardBackground = styled(motion.div)`

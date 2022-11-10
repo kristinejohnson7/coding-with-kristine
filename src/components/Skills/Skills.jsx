@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "react-multi-carousel/lib/styles.css";
 import s from "./Skills.module.scss";
 import {
@@ -15,8 +15,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Pagination, FreeMode } from "swiper";
-
 import { Swiper, SwiperSlide } from "swiper/react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const skills = [
   { name: "React", percent: 95 },
@@ -26,13 +27,34 @@ const skills = [
   { name: "User Design", percent: 90 },
 ];
 
+const boxVariant = {
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
+  hidden: { opacity: 0, scale: 0 },
+};
+
 export default function Skills() {
   const themes = useContext(ThemeContext);
   const { theme } = themes;
 
+  const control = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      control.start("visible");
+    }
+  }, [control, inView]);
+
   return (
     <section className={s.skills} id="skills">
-      <div id={s[`${theme}`]} className={s.skillWrapper}>
+      <motion.div
+        id={s[`${theme}`]}
+        className={s.skillWrapper}
+        ref={ref}
+        variants={boxVariant}
+        initial="hidden"
+        animate={control}
+      >
         <Header content="Skills" />
         <p id={s[`${theme}`]} className={s.skillText}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum modi,
@@ -90,7 +112,7 @@ export default function Skills() {
             })}
           </Swiper>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }
