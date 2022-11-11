@@ -1,34 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import "react-multi-carousel/lib/styles.css";
 import s from "./Skills.module.scss";
-import {
-  CircularProgressbarWithChildren,
-  buildStyles,
-} from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import RadialSeparators from "./RadialSeparators";
-import VisibilitySensor from "react-visibility-sensor";
 import Header from "../Header/Header";
 import { ThemeContext } from "../../App";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import { Pagination, FreeMode } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-const skills = [
-  { name: "React", percent: 95 },
-  { name: "JavaScript", percent: 95 },
-  { name: "ThreeJS", percent: 80 },
-  { name: "MongoDB", percent: 80 },
-  { name: "User Design", percent: 90 },
-];
-
 const boxVariant = {
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   hidden: { opacity: 0, scale: 0 },
 };
 
@@ -46,73 +26,84 @@ export default function Skills() {
   }, [control, inView]);
 
   return (
-    <section className={s.skills} id="skills">
-      <motion.div
-        id={s[`${theme}`]}
-        className={s.skillWrapper}
-        ref={ref}
-        variants={boxVariant}
-        initial="hidden"
-        animate={control}
-      >
+    <motion.section
+      ref={ref}
+      variants={boxVariant}
+      initial="hidden"
+      animate={control}
+      className={s.skills}
+      id="skills"
+    >
+      <div id={s[`${theme}`]} className={s.skillsContent}>
         <Header content="Skills" />
         <p id={s[`${theme}`]} className={s.skillText}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum modi,
           beatae voluptatibus error voluptatum accusamus deserunt? Recusandae
           officia magnam perspiciatis qui.
         </p>
-        <div>
-          <Swiper
-            // install Swiper modules
-            slidesPerView={3}
-            spaceBetween={30}
-            freeMode={true}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[FreeMode, Pagination]}
-          >
-            {skills.map((skill) => {
-              const { name, percent } = skill;
-              return (
-                <SwiperSlide>
-                  <VisibilitySensor>
-                    {({ isVisible }) => {
-                      const percentShowing = isVisible ? percent : 0;
-                      return (
-                        <div className={s.skillCircle}>
-                          <CircularProgressbarWithChildren
-                            value={percentShowing}
-                            text={`${percentShowing}%`}
-                            strokeWidth={10}
-                            styles={buildStyles({
-                              strokeLinecap: "butt",
-                              pathColor: "#440bd4",
-                              textColor: theme === "dark" ? "white" : "black",
-                              trailColor: "transparent",
-                            })}
-                          >
-                            <RadialSeparators
-                              count={12}
-                              style={{
-                                background: "#fff",
-                                width: "2px",
-                                // This needs to be equal to props.strokeWidth
-                                height: `${10}%`,
-                              }}
-                            />
-                          </CircularProgressbarWithChildren>
-                          <h5 id={s[`${theme}`]}>{name}</h5>
-                        </div>
-                      );
-                    }}
-                  </VisibilitySensor>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+        <div className={s.skillsList}>
+          <div className={s.skill}>
+            <i className="fa-brands fa-square-js"></i>
+            <p>JavaScript</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-brands fa-react"></i>
+            <p>React</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-brands fa-html5"></i>
+            <p>HTML</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-brands fa-css3-alt"></i>
+            <p>CSS</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-brands fa-sass"></i>
+            <p>Sass</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-brands fa-node"></i>
+            <p>Node</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-brands fa-node-js"></i>
+            <p>Express</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-brands fa-envira"></i>
+            <p>MongoDB</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-solid fa-paintbrush"></i>
+            <p>User Experience & Design</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-brands fa-figma"></i>
+            <p>Figma</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-brands fa-salesforce"></i>
+            <p>Salesforce</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-brands fa-pagelines"></i>
+            <p>Twig</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-regular fa-file"></i>
+            <p>Content Management System (CMS)</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-solid fa-cube"></i>
+            <p>ThreeJS</p>
+          </div>
+          <div className={s.skill}>
+            <i className="fa-solid fa-code-branch"></i>
+            <p>Rest API</p>
+          </div>
         </div>
-      </motion.div>
-    </section>
+      </div>
+    </motion.section>
   );
 }

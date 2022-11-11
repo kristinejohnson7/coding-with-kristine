@@ -82,10 +82,8 @@
         }
       }
     }
-  }
 
-  @media screen and (max-width: 890px) {
-    .contactWrapper {
+    @media screen and (max-width: 990px) {
       flex-direction: column;
       gap: 3rem;
 
@@ -111,13 +109,22 @@
         }
       }
     }
-  }
 
-  @media screen and (max-width: 675px) {
-    .contactWrapper {
+    @media screen and (max-width: 675px) {
       .form {
         width: 85%;
       }
     }
+
+    @media screen and (max-width: 500px) {
+      .threeExperience {
+        width: 85%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 470px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }

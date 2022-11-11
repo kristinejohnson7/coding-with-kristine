@@ -7,6 +7,8 @@ import Header from "../Header/Header";
 import { ThemeContext } from "../../App";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import angleRight from "../../assets/angleRight.svg";
+import angleLeft from "../../assets/angleLeft.svg";
 
 const TestimonialSectionStyles = styled.div`
   .fade-enter {
@@ -34,7 +36,7 @@ const TestimonialSectionStyles = styled.div`
 `;
 
 const boxVariant = {
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   hidden: { opacity: 0, scale: 0 },
 };
 
@@ -91,7 +93,7 @@ export default function Testimonials() {
                   <h4 className={s.name}>{activeSlide.name}</h4>
 
                   <p className={s.title}>{activeSlide.title}</p>
-                  <p>{activeSlide.desc}</p>
+                  <p className={s.description}>{activeSlide.desc}</p>
                 </div>
               </div>
             </CSSTransition>
@@ -106,7 +108,7 @@ export default function Testimonials() {
             tabIndex={0}
             onKeyDown={handlePrev}
           >
-            <i class="fa-solid fa-angle-left fa-2x"></i>
+            <img src={angleLeft} alt="left arrow" />
           </div>
           <div
             className={s.next}
@@ -115,7 +117,7 @@ export default function Testimonials() {
             tabIndex={0}
             onKeyDown={handleNext}
           >
-            <i class="fa-solid fa-angle-right fa-2x"></i>
+            <img src={angleRight} alt="right arrow" />
           </div>
         </div>
       </TestimonialSectionStyles>

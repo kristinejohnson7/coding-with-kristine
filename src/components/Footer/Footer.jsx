@@ -25,7 +25,7 @@ export default function Footer() {
             <ul className={s.socials}>
               <li>
                 <div className={s.icon}>
-                  <i class="fa-brands fa-linkedin-in fa-lg"></i>
+                  <i className="fa-brands fa-linkedin-in fa-lg"></i>
                 </div>
                 <a href="https://www.linkedin.com/in/kristine-johnson7/">
                   LinkedIn
@@ -33,13 +33,13 @@ export default function Footer() {
               </li>
               <li>
                 <div className={s.icon}>
-                  <i class="fa-brands fa-github-alt fa-lg"></i>
+                  <i className="fa-brands fa-github-alt fa-lg"></i>
                 </div>
                 <a href="https://github.com/">GitHub</a>
               </li>
               <li>
                 <div className={s.icon}>
-                  <i class="fa-brands fa-medium fa-lg"></i>
+                  <i className="fa-brands fa-medium fa-lg"></i>
                 </div>
                 <a href="https://medium.com/@kristinethejohnson">Blog</a>
               </li>

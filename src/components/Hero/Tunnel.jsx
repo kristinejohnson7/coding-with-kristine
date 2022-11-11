@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Ground } from "./Ground";
 import { Rings } from "./Rings";
 import { Boxes } from "./Boxes";
+import { ThemeContext } from "../../App";
 
 export default function Tunnel() {
+  const themes = useContext(ThemeContext);
+  const { theme } = themes;
+
   return (
     <>
       <OrbitControls target={[0, 0.35, 0]} maxPolarAngle={2.45} />
       <PerspectiveCamera makeDefault fov={90} position={[3, 2, 5]} />
 
-      <color args={["black"]} attach="background" />
+      <color
+        args={[theme === "dark" ? "black" : "#440bd4"]}
+        attach="background"
+      />
 
       <Rings />
       <Boxes />

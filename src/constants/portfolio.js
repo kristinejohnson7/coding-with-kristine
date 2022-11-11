@@ -9,6 +9,8 @@ import battleship from "../assets/Projects/battleship.png";
 import smackChat from "../assets/Projects/smackChat.png";
 import colorGen from "../assets/Projects/color-generator.png";
 import studentAPI from "../assets/Projects/studentAPI.png";
+import bookstagram from "../assets/Projects/bookstagram.png";
+import bookstagramBackend from "../assets/Projects/bookstagramBackend.png";
 
 export const portfolio = [
   {
@@ -19,7 +21,7 @@ export const portfolio = [
     type: "javascript",
   },
   {
-    title: "Next Level Movement Physical Therapy",
+    title: "NLM Physical Therapy",
     description:
       "This freelance project was for the owner of a mobile physical therapy practice. The owner wanted a web presence that was professional but also welcoming to patients and not overly “sterile”. I greatly enjoyed creating this website that reflects the owner's skill level and care for her work",
     img: nlm,
@@ -89,6 +91,20 @@ export const portfolio = [
     description:
       "The Node Battleship project was my first deep dive into JavaScript. This project operates solely in the Node terminal. The project was completed in stages with each part having requirements of increasing difficulty. The final part prints the boardgame in the terminal and allows the user to play a game against the computer. This project taught me a lot about the logic behind JavaScript. A goal of mine during this project was to make functions clean and concise. The most challenging aspect of this project was the requirement of making multidirectional ships without overlapping or falling off the gameboard. I learned so much from this challenge that I even wrote an article about everything I learned.",
     img: battleship,
+    type: "node",
+  },
+  {
+    title: "Bookstagram",
+    description:
+      "The Bookstagram project involved creating both a front-end and back-end for an Instagram-like app. As always I had a lot of fun designing the application and wanted to push myself to go above and beyond the project requirements. The project requirements were: the user must be able to create an account, login, the application displays a feed with posts, the user can delete and create posts, the front end must also be connected to AWS S3. In addition to these requirements I added the feature for users to like posts and have a display picture, as well as user information they could update.",
+    img: bookstagram,
+    type: "react",
+  },
+  {
+    title: "Bookstagram",
+    description:
+      "The Bookstagram project involved creating both a front-end and back-end for an Instagram-like app. As always I had a lot of fun designing the application and wanted to push myself to go above and beyond the project requirements. The project requirements were: the user must be able to create an account, login, the application displays a feed with posts, the user can delete and create posts, the front end must also be connected to AWS S3. In addition to these requirements I added the feature for users to like posts and have a display picture, as well as user information they could update.",
+    img: bookstagramBackend,
     type: "node",
   },
 ];

@@ -7,7 +7,7 @@ function Box({ color }) {
   const [xRotSpeed] = useState(() => Math.random());
   const [yRotSpeed] = useState(() => Math.random());
   const [scale] = useState(() => Math.pow(Math.random(), 2.0) * 0.5 + 0.05);
-  const [position, setPosition] = useState(resetPosition());
+  const [position] = useState(resetPosition());
 
   function resetPosition() {
     let v = new Vector3(
@@ -15,8 +15,6 @@ function Box({ color }) {
       Math.random() * 2.5 + 0.1,
       (Math.random() * 2 - 1) * 6
     );
-    // if (v.x < 0) v.x -= 1.75;
-    // if (v.x > 0) v.x += 1.75;
 
     return v;
   }
