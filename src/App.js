@@ -51,9 +51,9 @@ function App() {
       new THREE.TorusKnotGeometry(0.6, 0.5, 100, 16),
       material
     );
-    box1.position.y = -objectsDistance * 2.2;
-    box1.position.x = -1.3;
-    box2.position.y = -objectsDistance * 0.73;
+    box1.position.y = -objectsDistance * 2.6;
+    box1.position.x = -1.6;
+    box2.position.y = -objectsDistance * 0.9;
 
     scene.add(box1, box2);
 
@@ -172,7 +172,7 @@ function App() {
     };
 
     tick();
-  }, []);
+  }, [theme]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

@@ -19,17 +19,21 @@ export default function Skills() {
   const control = useAnimation();
   const [ref, inView] = useInView();
 
+  const desktop = window.innerWidth > 900;
+
   useEffect(() => {
-    if (inView) {
-      control.start("visible");
+    if (desktop) {
+      if (inView) {
+        control.start("visible");
+      }
     }
-  }, [control, inView]);
+  }, [control, inView, desktop]);
 
   return (
     <motion.section
       ref={ref}
       variants={boxVariant}
-      initial="hidden"
+      initial={desktop ? "hidden" : "visible"}
       animate={control}
       className={s.skills}
       id="skills"

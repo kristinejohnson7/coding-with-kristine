@@ -24,11 +24,15 @@ export default function Portfolio() {
   const control = useAnimation();
   const [ref, inView] = useInView();
 
+  const desktop = window.innerWidth > 900;
+
   useEffect(() => {
-    if (inView) {
-      control.start("visible");
+    if (desktop) {
+      if (inView) {
+        control.start("visible");
+      }
     }
-  }, [control, inView]);
+  }, [control, inView, desktop]);
 
   const portfolioData = filteredPortfolio.map((item, index) => {
     return (
@@ -50,7 +54,7 @@ export default function Portfolio() {
     <motion.section
       ref={ref}
       variants={boxVariant}
-      initial="hidden"
+      initial={desktop ? "hidden" : "visible"}
       animate={control}
       className={s.portfolio}
       id={s[`${theme}`]}
