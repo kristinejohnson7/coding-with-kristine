@@ -51,9 +51,9 @@ function App() {
       new THREE.TorusKnotGeometry(0.6, 0.5, 100, 16),
       material
     );
-    box1.position.y = -objectsDistance * 2.5;
-    box1.position.x = -1.7;
-    box2.position.y = -objectsDistance * 1;
+    box1.position.y = -objectsDistance * 2.2;
+    box1.position.x = -1.3;
+    box2.position.y = -objectsDistance * 0.73;
 
     scene.add(box1, box2);
 
@@ -81,7 +81,7 @@ function App() {
       color: "white",
       sizeAttenuation: true,
       size: 0.5,
-      map: particleTexture,
+      map: theme === "dark" ? particleTexture : "black",
     });
     particlesMaterial.transparent = true;
     particlesMaterial.alphaMap = particleTexture;
@@ -166,10 +166,8 @@ function App() {
         mesh.rotation.y = elapsedTime * 0.12;
       }
 
-      // Render
       renderer.render(scene, camera);
 
-      // Call tick again on the next frame
       window.requestAnimationFrame(tick);
     };
 

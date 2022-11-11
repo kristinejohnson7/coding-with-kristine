@@ -14,6 +14,7 @@ export default function Card({ title, description, imgSrc }) {
         ref={card}
         isCardOpened={isCardOpened}
         className={s.cardLink}
+        layout
         onClick={() => {
           setIsCardOpened(true);
           if (!isCardOpened) {
@@ -64,8 +65,9 @@ const CardLink = styled(motion.div)`
   ${(props) =>
     props.isCardOpened &&
     css`
-      width: 70%;
-      height: 60%;
+      width: 75%;
+      max-width: 900px;
+      height: fit-content;
       overflow-y: auto;
       overflow-x: hidden;
       position: fixed;

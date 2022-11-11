@@ -8,20 +8,20 @@ import { Canvas } from "@react-three/fiber";
 import ContactExperience from "../ContactExperience/ContactExperience";
 
 const boxVariant = {
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.7 } },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
   hidden: { opacity: 0, scale: 0 },
-};
-
-const cameraSettings = {
-  fov: 65,
-  near: 0.1,
-  far: 80,
-  position: [-1, 4.35, 10],
 };
 
 export default function Contact() {
   const themes = useContext(ThemeContext);
   const { theme } = themes;
+
+  const cameraSettings = {
+    fov: window.innerWidth > 500 ? 65 : 90,
+    near: 0.1,
+    far: 80,
+    position: [-1, 4.35, 10],
+  };
 
   const control = useAnimation();
   const [ref, inView] = useInView();

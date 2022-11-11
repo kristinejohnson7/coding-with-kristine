@@ -12,7 +12,9 @@
   border-right: 120px solid $secondary-dark transparent;
 
   .canvas {
-    margin-top: 7rem;
+    margin-top: 9rem;
+    border: 3px solid $white;
+    border-radius: 5px;
     height: 47rem;
     pointer-events: none;
     width: 80%;

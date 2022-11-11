@@ -1,15 +1,12 @@
 @import "/src/sassStyles/variables";
 
 .aboutContainer {
-  // background: rgba(126, 203, 199, 0.2);
-  // background: linear-gradient(transparent 40%, rgba(126, 203, 199, 0.2) 0);
-  padding-top: 10rem;
-  margin: 0 5rem 10rem;
+  padding-top: 13rem;
 
   .aboutWrapper {
     position: relative;
     margin: 0 auto;
-    max-width: 850px;
+    max-width: 900px;
     min-height: 37rem;
 
     .about {
@@ -18,10 +15,8 @@
       display: flex;
       gap: 2rem;
       justify-content: center;
-      margin-bottom: 5rem;
-      padding: 2rem;
-      position: absolute;
-      top: -2rem;
+      padding: 3rem 2.2rem 3.2rem;
+      z-index: 1;
       border-radius: 10px;
 
       &#dark {
@@ -72,6 +67,7 @@
         }
 
         p {
+          font-size: 1.3rem;
           margin-bottom: 1rem;
 
           &:last-of-type {
@@ -83,8 +79,6 @@
   }
 
   @media screen and (max-width: 900px) {
-    padding-bottom: 17rem;
-
     .aboutWrapper {
       display: flex;
       justify-content: center;
@@ -92,7 +86,6 @@
       .about {
         align-items: center;
         flex-direction: column;
-        top: -2.5rem;
 
         .aboutPhoto {
           width: 200px;
@@ -116,18 +109,8 @@
   }
 
   @media screen and (max-width: 530px) {
-    padding-bottom: 23rem;
-
     .aboutWrapper .about .aboutText hr {
       width: 230px;
     }
-  }
-
-  @media screen and (max-width: 450px) {
-    padding-bottom: 32rem;
-  }
-
-  @media screen and (max-width: 410px) {
-    padding-bottom: 38rem;
   }
 }

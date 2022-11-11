@@ -6,19 +6,20 @@
   text-align: center;
   background-image: url("../../assets/bluegradient.svg");
   background-size: cover;
-  width: 85%;
+  width: 80%;
   margin: 0 auto 7rem;
+  max-width: 900px;
   border-radius: 7px;
 
   &#dark {
     background-image: linear-gradient(
-        rgba(0, 0, 0, 0.2) 0%,
-        rgba(0, 0, 0, 0.6) 100%
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.7) 100%
       ),
       url("../../assets/bluegradient.svg");
 
     h2 {
-      color: $pure-black;
+      color: $black;
     }
 
     .testimonialWrapper {
@@ -45,7 +46,7 @@
 
     .testimonialInfo {
       width: 100%;
-      height: fit-content;
+      height: 475px;
       padding: 0rem 3rem 3rem;
       border-radius: 12px;
 
@@ -76,6 +77,11 @@
         font-weight: 500;
         margin-bottom: 1rem;
       }
+
+      .description {
+        font-size: 1.2rem;
+        text-align: justify;
+      }
     }
   }
 
@@ -97,12 +103,63 @@
       border-radius: 8px;
       cursor: pointer;
       z-index: 100;
+
+      img {
+        width: 45px;
+      }
     }
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 950px) {
     .testimonialWrapper {
       width: 90%;
+
+      .testimonialInfo {
+        padding-left: 1.3rem;
+        padding-right: 1.3rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 810px) {
+    .testimonialWrapper .testimonialInfo {
+      height: 550px;
+    }
+  }
+
+  @media screen and (max-width: 720px) {
+    .testimonialWrapper .testimonialInfo {
+      height: 650px;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-bottom: 3rem;
+  }
+
+  @media screen and (max-width: 550px) {
+    .testimonialWrapper .testimonialInfo {
+      height: 750px;
+    }
+  }
+
+  @media screen and (max-width: 475px) {
+    .testimonialWrapper .testimonialInfo {
+      height: 820px;
+
+      .description {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    .testimonialWrapper .testimonialInfo {
+      height: 910px;
+
+      .description {
+        font-size: 1.1rem;
+      }
     }
   }
 }
