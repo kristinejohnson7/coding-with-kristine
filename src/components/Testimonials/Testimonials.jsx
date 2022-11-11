@@ -50,11 +50,15 @@ export default function Testimonials() {
   const control = useAnimation();
   const [ref, inView] = useInView();
 
+  const desktop = window.innerWidth > 900;
+
   useEffect(() => {
-    if (inView) {
-      control.start("visible");
+    if (desktop) {
+      if (inView) {
+        control.start("visible");
+      }
     }
-  }, [control, inView]);
+  }, [control, inView, desktop]);
 
   function handleNext() {
     if (activeIndex >= testimonials.length - 1) {
@@ -75,7 +79,7 @@ export default function Testimonials() {
     <motion.section
       ref={ref}
       variants={boxVariant}
-      initial="hidden"
+      initial={desktop ? "hidden" : "visible"}
       animate={control}
       className={s.testimonials}
       id={s[`${theme}`]}

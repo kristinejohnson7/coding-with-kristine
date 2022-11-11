@@ -4,15 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding-top: 90px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  border-left: 120px solid $secondary-dark transparent;
-  border-right: 120px solid $secondary-dark transparent;
+  padding: 190px 0px 0px 0px;
+  position: relative;
 
   .canvas {
-    margin-top: 9rem;
+    margin-top: 3rem;
     border: 3px solid $white;
     border-radius: 5px;
     height: 47rem;
@@ -22,22 +18,14 @@
   }
 
   @media screen and (max-width: 900px) {
-    flex-wrap: wrap;
-    justify-content: start;
     margin-bottom: 4.5rem;
     padding-left: none;
-    padding-top: 220px;
-
-    .canvas {
-      margin-left: auto;
-      margin-top: -160px;
-    }
+    padding-top: 90px;
   }
 
   @media screen and (max-width: 625px) {
     .canvas {
-      width: 100%;
-      margin-top: -50px;
+      width: 80%;
     }
   }
 
