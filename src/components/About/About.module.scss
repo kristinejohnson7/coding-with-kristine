@@ -79,7 +79,7 @@
   }
 
   @media screen and (max-width: 900px) {
-    padding-top: 5rem;
+    padding-top: 3rem;
 
     .aboutWrapper {
       display: flex;
@@ -117,6 +117,16 @@
   @media screen and (max-width: 530px) {
     .aboutWrapper .about .aboutText hr {
       width: 230px;
+    }
+  }
+
+  @media screen and (max-width: 470px) {
+    padding-left: 0;
+    padding-right: 0;
+
+    .aboutWrapper .about {
+      border: none;
+      padding-bottom: 0;
     }
   }
 }
