@@ -67,7 +67,7 @@
         }
 
         p {
-          font-size: 1.3rem;
+          font-size: 1.2rem;
           margin-bottom: 1rem;
 
           &:last-of-type {
@@ -95,6 +95,10 @@
 
         .aboutText {
           margin-top: -4rem;
+
+          p {
+            font-size: 1.1rem;
+          }
         }
       }
     }

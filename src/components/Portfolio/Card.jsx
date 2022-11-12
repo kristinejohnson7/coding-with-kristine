@@ -83,6 +83,10 @@ const CardLink = styled(motion.div)`
       justify-content: flex-start;
       flex-direction: column;
       background: #262626;
+      @media (max-width: 550px) {
+        overflow-y: scroll;
+        max-height: 600px;
+      }
     `}
 `;
 
