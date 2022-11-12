@@ -6,12 +6,21 @@
   width: 100vw;
   z-index: 2500;
 
+  &.mobile {
+    .navWrapper .navLogo {
+      width: 5rem;
+    }
+  }
+
   &.sticky {
     background-color: $white;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-    height: 5.5rem;
+    box-shadow: 0px 1px 2px 0px rgba(68, 11, 212, 0.3),
+      1px 2px 4px 0px rgba(68, 11, 212, 0.3),
+      2px 4px 8px 0px rgba(68, 11, 212, 0.3),
+      2px 4px 16px 0px rgba(68, 11, 212, 0.2);
+    height: 5.6rem;
 
-    .navHeader .navLogo {
+    .navWrapper .navLogo {
       width: 5rem;
     }
 
@@ -20,7 +29,21 @@
     }
   }
 
-  .navHeader {
+  &.dark {
+    .navWrapper .navBarOptions li button {
+      color: $white;
+
+      &::before {
+        background-color: $secondary-dark;
+      }
+
+      &.activeClass::before {
+        background-color: $secondary-dark;
+      }
+    }
+  }
+
+  .navWrapper {
     display: flex;
     gap: 2rem;
     justify-content: space-between;
@@ -33,6 +56,10 @@
       width: 10rem;
     }
 
+    .burger {
+      display: none;
+    }
+
     .navBarOptions {
       display: flex;
       font-family: "Poppins", sans-serif;
@@ -42,10 +69,41 @@
       text-transform: uppercase;
 
       li {
-        // cursor: pointer;
+        cursor: pointer;
+        position: relative;
 
-        &:hover {
-          color: $primary-light;
+        button {
+          background: none;
+          border: none;
+          cursor: pointer;
+
+          &.activeClass::before {
+            content: "";
+            position: absolute;
+            height: 1.3px;
+            width: 100%;
+            background-color: $primary-light;
+            bottom: -5px;
+            left: 0;
+          }
+
+          &::before:not(.activeClass) {
+            content: "";
+            position: absolute;
+            cursor: pointer;
+            height: 1.3px;
+            width: 100%;
+            background-color: $primary-light;
+            left: 0;
+            bottom: -5px;
+            transform: scale(0, 1);
+            transition: transform 0.25s ease;
+            transform-origin: 0 100%;
+          }
+
+          &:hover::before:not(.activeClass) {
+            transform: scale(1, 1);
+          }
         }
       }
 
@@ -62,8 +120,43 @@
       }
     }
   }
-}
 
-#dark .navBarOptions {
-  color: $white;
+  @media screen and (max-width: 850px) {
+    .navWrapper {
+      .burger {
+        display: block;
+      }
+
+      .navBarOptions {
+        display: none;
+
+        &#hidden {
+          position: absolute;
+          padding: 20px;
+          right: 0;
+          top: 20px;
+          width: 60%;
+          background-color: $white;
+          border-bottom-right-radius: 10px;
+          border-bottom-left-radius: 10px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+
+    &.dark {
+      .navWrapper {
+        .burger {
+          color: $white;
+        }
+
+        .navBarOptions#hidden {
+          background-color: $black;
+          color: $white;
+        }
+      }
+    }
+  }
 }

@@ -4,6 +4,7 @@ import s from "./Hero.module.scss";
 import { ThemeContext } from "../../App";
 import { useContext } from "react";
 import Tunnel from "./Tunnel";
+import { useNav } from "../../hooks/useNav";
 
 const cameraSettings = {
   fov: 95,
@@ -16,8 +17,10 @@ export default function Hero() {
   const themes = useContext(ThemeContext);
   const { theme } = themes;
 
+  const heroRef = useNav("Home");
+
   return (
-    <section className={s.hero} id={s[`${theme}`]}>
+    <section ref={heroRef} className={s.hero} id={s[`${theme}`]}>
       <div className={s.canvas}>
         <Suspense fallback={null}>
           <Canvas shadows camera={cameraSettings}>

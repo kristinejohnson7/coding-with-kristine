@@ -12,6 +12,7 @@ import * as THREE from "three";
 import texture from "./assets/particlePack/png/star_05.png";
 import objTexture from "./assets/3.jpg";
 import { ScrollContainer } from "react-scroll-motion";
+import NavProvider from "./context/NavContext";
 
 export const ThemeContext = createContext(null);
 
@@ -172,23 +173,25 @@ function App() {
     };
 
     tick();
-  }, [theme]);
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <ScrollContainer>
-        <div id={theme} className="app">
-          <div className="webgl" ref={mountRef}></div>
-          <NavBar />
-          <Hero />
-          <About />
-          <Skills />
-          <Portfolio />
-          <Testimonials />
-          <Contact />
-          <Footer />
-        </div>
-      </ScrollContainer>
+      <NavProvider>
+        <ScrollContainer>
+          <div className={`app ${theme}`}>
+            <div className="webgl" ref={mountRef}></div>
+            <NavBar />
+            <Hero />
+            <About />
+            <Skills />
+            <Portfolio />
+            <Testimonials />
+            <Contact />
+            <Footer />
+          </div>
+        </ScrollContainer>
+      </NavProvider>
     </ThemeContext.Provider>
   );
 }

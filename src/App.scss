@@ -7,7 +7,7 @@ body {
     background-color: $white;
   }
 
-  #dark {
+  .dark {
     background-color: $black;
   }
 }
@@ -85,7 +85,7 @@ h6 {
   align-items: center;
 }
 
-#dark {
+.dark {
   #skills .swiper-pagination-bullet {
     background-color: $white;
   }
