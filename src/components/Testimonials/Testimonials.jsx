@@ -9,6 +9,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import angleRight from "../../assets/angleRight.svg";
 import angleLeft from "../../assets/angleLeft.svg";
+import { useNav } from "../../hooks/useNav";
 
 const TestimonialSectionStyles = styled.div`
   .fade-enter {
@@ -50,6 +51,8 @@ export default function Testimonials() {
   const control = useAnimation();
   const [ref, inView] = useInView();
 
+  const testimonialsRef = useNav("Testimonials");
+
   const desktop = window.innerWidth > 900;
 
   useEffect(() => {
@@ -81,50 +84,56 @@ export default function Testimonials() {
       variants={boxVariant}
       initial={desktop ? "hidden" : "visible"}
       animate={control}
-      className={s.testimonials}
-      id={s[`${theme}`]}
+      className={`${s.testimonials} ${s[`${theme}`]}`}
+      id="testimonials"
     >
-      <TestimonialSectionStyles>
-        <Header content="Testimonials" />
-        <div className={s.testimonialWrapper}>
-          <SwitchTransition component={null}>
-            <CSSTransition key={activeSlide.id} timeout={300} classNames="fade">
-              <div className={s.testimonialInfo}>
-                <div className={s.desc}>
-                  <div className={s.image}>
-                    <img src={activeSlide.img} alt="testimonial" />
+      <div ref={testimonialsRef}>
+        <TestimonialSectionStyles>
+          <Header content="Testimonials" />
+          <div className={s.testimonialWrapper}>
+            <SwitchTransition component={null}>
+              <CSSTransition
+                key={activeSlide.id}
+                timeout={300}
+                classNames="fade"
+              >
+                <div className={s.testimonialInfo}>
+                  <div className={s.desc}>
+                    <div className={s.image}>
+                      <img src={activeSlide.img} alt="testimonial" />
+                    </div>
+                    <h4 className={s.name}>{activeSlide.name}</h4>
+
+                    <p className={s.title}>{activeSlide.title}</p>
+                    <p className={s.description}>{activeSlide.desc}</p>
                   </div>
-                  <h4 className={s.name}>{activeSlide.name}</h4>
-
-                  <p className={s.title}>{activeSlide.title}</p>
-                  <p className={s.description}>{activeSlide.desc}</p>
                 </div>
-              </div>
-            </CSSTransition>
-          </SwitchTransition>
-        </div>
+              </CSSTransition>
+            </SwitchTransition>
+          </div>
 
-        <div className={s.arrows}>
-          <div
-            className={s.prev}
-            onClick={handlePrev}
-            role="button"
-            tabIndex={0}
-            onKeyDown={handlePrev}
-          >
-            <img src={angleLeft} alt="left arrow" />
+          <div className={s.arrows}>
+            <div
+              className={s.prev}
+              onClick={handlePrev}
+              role="button"
+              tabIndex={0}
+              onKeyDown={handlePrev}
+            >
+              <img src={angleLeft} alt="left arrow" />
+            </div>
+            <div
+              className={s.next}
+              onClick={handleNext}
+              role="button"
+              tabIndex={0}
+              onKeyDown={handleNext}
+            >
+              <img src={angleRight} alt="right arrow" />
+            </div>
           </div>
-          <div
-            className={s.next}
-            onClick={handleNext}
-            role="button"
-            tabIndex={0}
-            onKeyDown={handleNext}
-          >
-            <img src={angleRight} alt="right arrow" />
-          </div>
-        </div>
-      </TestimonialSectionStyles>
+        </TestimonialSectionStyles>
+      </div>
     </motion.section>
   );
 }

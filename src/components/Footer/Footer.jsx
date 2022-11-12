@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <section className={s.footer}>
       <div className={s.footerContainer}>
-        <div className={s.footerMain} id={s[`${theme}`]}>
+        <div className={`${s.footerMain} ${s[`${theme}`]}`}>
           <div className={s.logo}>
             <img src={theme === "dark" ? logoDark : logoLight} alt="logo" />
           </div>

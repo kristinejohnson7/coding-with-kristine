@@ -8,12 +8,19 @@ import sun from "../../assets/sun.svg";
 import stickyLogo from "../../assets/stickylogo.svg";
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
+import { NavContext } from "../../context/NavContext";
+import Hamburger from "hamburger-react";
 
 export default function NavBar() {
   const themes = useContext(ThemeContext);
   const { theme, toggleTheme } = themes;
 
   const [sticky, setSticky] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [burgerOpen, setBurgerOpen] = useState(false);
+
+  const { activeLinkId } = useContext(NavContext);
+  console.log(activeLinkId);
 
   const handleStickyNav = () => {
     if (window.scrollY >= 150) {
@@ -25,42 +32,70 @@ export default function NavBar() {
 
   window.addEventListener("scroll", handleStickyNav);
 
+  const navListOptions = [
+    "About",
+    "Skills",
+    "Portfolio",
+    "Testimonials",
+    "Contact",
+  ];
+
+  const handleClickNav = (title) => {
+    document
+      .getElementById(title.toLowerCase())
+      .scrollIntoView({ behavior: "smooth" });
+  };
+
+  const setNavLogo = () => {
+    if (window.innerWidth < 850 || sticky) {
+      return <img src={stickyLogo} alt="logo" />;
+    } else {
+      return <img src={theme === "dark" ? logoDark : logoLight} alt="logo" />;
+    }
+  };
+
   return (
-    <div className={`navbar ${sticky ? "sticky" : null} ${theme}`}>
-      <header className="navHeader">
-        <div className="navLogo">
-          {sticky ? (
-            <img src={stickyLogo} alt="logo" />
-          ) : (
-            <img src={theme === "dark" ? logoDark : logoLight} alt="logo" />
-          )}
+    <nav
+      className={`navbar ${sticky ? "sticky" : ""} ${theme} ${
+        window.innerWidth < 850 ? "mobile" : ""
+      }`}
+    >
+      <div className="navWrapper">
+        <div className="navLogo">{setNavLogo()}</div>
+        <div className="burger" onClick={() => setShowMenu(!showMenu)}>
+          <Hamburger toggled={burgerOpen} toggle={setBurgerOpen} />
         </div>
-        <div>
-          <ul className="navBarOptions">
-            <li>Home</li>
-            <li>Skills</li>
-            <li onClick={() => window.location.replace("/#about")}>About</li>
-            <li>Portfolio</li>
-            <li>Contact</li>
-            <div>
-              <Switch
-                className="switch"
-                onChange={toggleTheme}
-                checked={theme === "dark"}
-                checkedIcon={
-                  <img src={moon} className="checkIcon" alt="theme switch" />
-                }
-                uncheckedIcon={
-                  <img src={sun} className="checkIcon" alt="theme switch" />
-                }
-                onColor="#767676"
-                offColor="#7ecbc7"
-                activeBoxShadow="'0 0 2px 3px #440bd4'	"
-              />
-            </div>
-          </ul>
-        </div>
-      </header>
-    </div>
+        <ul className="navBarOptions" id={showMenu ? "hidden" : ""}>
+          {navListOptions.map((section) => {
+            return (
+              <li key={section}>
+                <button
+                  onClick={() => handleClickNav(section)}
+                  className={activeLinkId === section ? "activeClass" : ""}
+                >
+                  {section}
+                </button>
+              </li>
+            );
+          })}
+          <div>
+            <Switch
+              className="switch"
+              onChange={toggleTheme}
+              checked={theme === "dark"}
+              checkedIcon={
+                <img src={moon} className="checkIcon" alt="theme switch" />
+              }
+              uncheckedIcon={
+                <img src={sun} className="checkIcon" alt="theme switch" />
+              }
+              onColor="#767676"
+              offColor="#7ecbc7"
+              activeBoxShadow="'0 0 2px 3px #440bd4'	"
+            />
+          </div>
+        </ul>
+      </div>
+    </nav>
   );
 }

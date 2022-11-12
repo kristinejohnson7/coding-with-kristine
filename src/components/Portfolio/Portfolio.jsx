@@ -7,6 +7,7 @@ import Card from "./Card";
 import { ThemeContext } from "../../App";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useNav } from "../../hooks/useNav";
 
 const boxVariant = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
@@ -23,6 +24,8 @@ export default function Portfolio() {
 
   const control = useAnimation();
   const [ref, inView] = useInView();
+
+  const portfolioRef = useNav("Portfolio");
 
   const desktop = window.innerWidth > 900;
 
@@ -56,60 +59,62 @@ export default function Portfolio() {
       variants={boxVariant}
       initial={desktop ? "hidden" : "visible"}
       animate={control}
-      className={s.portfolio}
-      id={s[`${theme}`]}
+      className={`${s.portfolio} ${s[`${theme}`]}`}
+      id="portfolio"
     >
-      <div className={s.portfolioHeader}>
-        <Header content="Portfolio" />
-        <p className={s.portfolioIntroText}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores
-          alias ducimus ullam iusto eum. Rerum eius molestias, harum
-          consequuntur assumenda necessitatibus nisi quae perferendis explicabo
-          blanditiis nesciunt eos optio?
-        </p>
+      <div ref={portfolioRef}>
+        <div className={s.portfolioHeader}>
+          <Header content="Portfolio" />
+          <p className={s.portfolioIntroText}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
+            maiores alias ducimus ullam iusto eum. Rerum eius molestias, harum
+            consequuntur assumenda necessitatibus nisi quae perferendis
+            explicabo blanditiis nesciunt eos optio?
+          </p>
+        </div>
+        <div className={s.portfolioFilter}>
+          <Button
+            content="React"
+            style={{
+              backgroundImage:
+                portfolioType === "react"
+                  ? "linear-gradient(45deg,rgba(127, 17, 224, 0.7),rgba(3, 252, 248, 0.7))"
+                  : null,
+            }}
+            onClick={() => handleFilteredPortfolio("react")}
+          />
+          <Button
+            content="JavaScript"
+            style={{
+              backgroundImage:
+                portfolioType === "javascript"
+                  ? "linear-gradient(45deg,rgba(127, 17, 224, 0.7),rgba(3, 252, 248, 0.7))"
+                  : null,
+            }}
+            onClick={() => handleFilteredPortfolio("javascript")}
+          />
+          <Button
+            content="Node"
+            style={{
+              backgroundImage:
+                portfolioType === "node"
+                  ? "linear-gradient(45deg,rgba(127, 17, 224, 0.7),rgba(3, 252, 248, 0.7))"
+                  : null,
+            }}
+            onClick={() => handleFilteredPortfolio("node")}
+          />
+        </div>
+        <motion.div
+          className={s.portfolioItems}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            delay: 1,
+          }}
+        >
+          {portfolioData}
+        </motion.div>
       </div>
-      <div className={s.portfolioFilter}>
-        <Button
-          content="React"
-          style={{
-            backgroundImage:
-              portfolioType === "react"
-                ? "linear-gradient(45deg,rgba(127, 17, 224, 0.7),rgba(3, 252, 248, 0.7))"
-                : null,
-          }}
-          onClick={() => handleFilteredPortfolio("react")}
-        />
-        <Button
-          content="JavaScript"
-          style={{
-            backgroundImage:
-              portfolioType === "javascript"
-                ? "linear-gradient(45deg,rgba(127, 17, 224, 0.7),rgba(3, 252, 248, 0.7))"
-                : null,
-          }}
-          onClick={() => handleFilteredPortfolio("javascript")}
-        />
-        <Button
-          content="Node"
-          style={{
-            backgroundImage:
-              portfolioType === "node"
-                ? "linear-gradient(45deg,rgba(127, 17, 224, 0.7),rgba(3, 252, 248, 0.7))"
-                : null,
-          }}
-          onClick={() => handleFilteredPortfolio("node")}
-        />
-      </div>
-      <motion.div
-        className={s.portfolioItems}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          delay: 1,
-        }}
-      >
-        {portfolioData}
-      </motion.div>
     </motion.section>
   );
 }

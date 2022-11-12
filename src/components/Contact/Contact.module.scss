@@ -13,8 +13,8 @@
     justify-content: center;
     gap: 5rem;
 
-    &#dark {
-      form {
+    &.dark {
+      .form {
         color: $white;
 
         input,
@@ -22,7 +22,7 @@
           background-color: $pure-black;
         }
 
-        .submitBtn {
+        input.submitBtn {
           color: $white;
           border: 2px solid $secondary-dark;
         }

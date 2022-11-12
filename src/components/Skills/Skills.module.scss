@@ -3,7 +3,7 @@
 .skills {
   position: relative;
   margin: 0 auto;
-  margin-bottom: 7rem;
+  margin-bottom: 10rem;
   height: 515px;
   width: 80%;
 
@@ -39,7 +39,7 @@
       color: $secondary-dark;
     }
 
-    &#dark {
+    &.dark {
       background-color: $pure-black;
       color: $white;
     }

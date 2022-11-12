@@ -6,6 +6,7 @@ import Header from "../Header/Header";
 import { ThemeContext } from "../../App";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useNav } from "../../hooks/useNav";
 
 const boxVariant = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
@@ -18,6 +19,8 @@ export default function Skills() {
 
   const control = useAnimation();
   const [ref, inView] = useInView();
+
+  const skillsRef = useNav("Skills");
 
   const desktop = window.innerWidth > 900;
 
@@ -38,7 +41,7 @@ export default function Skills() {
       className={s.skills}
       id="skills"
     >
-      <div id={s[`${theme}`]} className={s.skillsContent}>
+      <div id={s[`${theme}`]} className={s.skillsContent} ref={skillsRef}>
         <Header content="Skills" />
         <p id={s[`${theme}`]} className={s.skillText}>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum modi,

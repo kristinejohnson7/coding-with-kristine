@@ -6,6 +6,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Canvas } from "@react-three/fiber";
 import ContactExperience from "../ContactExperience/ContactExperience";
+import { useNav } from "../../hooks/useNav";
 
 const boxVariant = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
@@ -26,6 +27,8 @@ export default function Contact() {
   const control = useAnimation();
   const [ref, inView] = useInView();
 
+  const contactRef = useNav("Contact");
+
   const desktop = window.innerWidth > 900;
 
   useEffect(() => {
@@ -43,8 +46,9 @@ export default function Contact() {
       initial={desktop ? "hidden" : "visible"}
       animate={control}
       className={s.contact}
+      id="contact"
     >
-      <div className={s.contactWrapper} id={s[`${theme}`]}>
+      <div className={`${s.contactWrapper} ${s[`${theme}`]}`} ref={contactRef}>
         <div className={s.threeExperience}>
           <Canvas shadows camera={cameraSettings}>
             <ContactExperience />

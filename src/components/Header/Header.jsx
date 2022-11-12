@@ -6,5 +6,5 @@ export default function Header({ content, variant, ...props }) {
   const themes = useContext(ThemeContext);
   const { theme } = themes;
 
-  return <h2 id={s[`${theme}`]}>{content}</h2>;
+  return <h2 className={s[`${theme}`]}>{content}</h2>;
 }

@@ -7,7 +7,7 @@ export default function Button({ content, ...props }) {
   const { theme } = themes;
 
   return (
-    <button id={s[`${theme}`]} className={s.btn} {...props}>
+    <button className={`${s.btn} ${s[`${theme}`]}`} {...props}>
       {content}
     </button>
   );
