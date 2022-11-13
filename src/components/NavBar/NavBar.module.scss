@@ -37,8 +37,12 @@
         background-color: $secondary-dark;
       }
 
-      &.activeClass::before {
-        background-color: $secondary-dark;
+      &.activeClass {
+        color: $secondary-dark;
+
+        &::before {
+          background-color: $secondary-dark;
+        }
       }
     }
   }
@@ -77,6 +81,10 @@
           border: none;
           cursor: pointer;
 
+          &.activeClass {
+            color: $primary-light;
+          }
+
           &.activeClass::before {
             content: "";
             position: absolute;
@@ -101,8 +109,12 @@
             transform-origin: 0 100%;
           }
 
-          &::before:not(.activeClass):hover {
+          &::before:not(.activeClass) {
             transform: scale(1, 1);
+          }
+
+          &:hover:not(.activeClass) {
+            color: $secondary-dark;
           }
         }
       }

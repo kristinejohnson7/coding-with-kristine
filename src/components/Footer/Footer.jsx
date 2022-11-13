@@ -17,10 +17,16 @@ export default function Footer() {
           </div>
           <div className={s.options}>
             <ul className={s.pageOptions}>
-              <li>About</li>
-              <li>Portfolio</li>
-              <li>Testimonials</li>
-              <li>Contact</li>
+              <li onClick={() => window.location.replace("/#about")}>About</li>
+              <li onClick={() => window.location.replace("/#portfolio")}>
+                Portfolio
+              </li>
+              <li onClick={() => window.location.replace("/#testimonials")}>
+                Testimonials
+              </li>
+              <li onClick={() => window.location.replace("/#contact")}>
+                Contact
+              </li>
             </ul>
             <ul className={s.socials}>
               <li>

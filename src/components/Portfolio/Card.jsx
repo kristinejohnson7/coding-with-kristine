@@ -2,11 +2,20 @@ import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
 import { Fragment, useRef, useState } from "react";
 import s from "./Card.module.scss";
+import Button from "../Button/Button";
 
-export default function Card({ title, description, imgSrc }) {
+export default function Card({
+  title,
+  description,
+  imgSrc,
+  projectLink,
+  gitHubLink,
+}) {
   const [isCardOpened, setIsCardOpened] = useState(false);
   const [cardDimensions, setCardDimensions] = useState({ width: 0, height: 0 });
   const card = useRef(null);
+
+  console.log("LINK", projectLink);
 
   return (
     <Fragment>
@@ -35,9 +44,25 @@ export default function Card({ title, description, imgSrc }) {
         </CardHeader>
 
         {isCardOpened && (
-          <CardDescription initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-            {description}
-          </CardDescription>
+          <>
+            <div className={s.projectLinks}>
+              <Button>
+                <a href={gitHubLink} target="_blank" rel="noreferrer">
+                  GitHub
+                </a>
+              </Button>
+              {projectLink && (
+                <Button>
+                  <a href={projectLink} target="_blank" rel="noreferrer">
+                    Project
+                  </a>
+                </Button>
+              )}
+            </div>
+            <CardDescription initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+              {description}
+            </CardDescription>
+          </>
         )}
       </CardLink>
       {isCardOpened && (
@@ -85,7 +110,8 @@ const CardLink = styled(motion.div)`
       background: #262626;
       @media (max-width: 550px) {
         overflow-y: scroll;
-        max-height: 600px;
+        max-height: 650px;
+        width: 90%;
       }
     `}
 `;
@@ -99,7 +125,7 @@ const CardHeader = styled(motion.h2)`
 
 const CardDescription = styled(motion.p)`
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #ffffff;
   margin-top: 1.3rem;
 `;

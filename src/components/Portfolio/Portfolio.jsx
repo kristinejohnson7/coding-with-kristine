@@ -44,6 +44,8 @@ export default function Portfolio() {
         title={item.title}
         description={item.description}
         imgSrc={item.img}
+        gitHubLink={item.gitHubLink}
+        projectLink={item.projectLink}
       />
     );
   });
@@ -74,7 +76,6 @@ export default function Portfolio() {
         </div>
         <div className={s.portfolioFilter}>
           <Button
-            content="React"
             style={{
               backgroundImage:
                 portfolioType === "react"
@@ -82,9 +83,10 @@ export default function Portfolio() {
                   : null,
             }}
             onClick={() => handleFilteredPortfolio("react")}
-          />
+          >
+            React
+          </Button>
           <Button
-            content="JavaScript"
             style={{
               backgroundImage:
                 portfolioType === "javascript"
@@ -92,9 +94,10 @@ export default function Portfolio() {
                   : null,
             }}
             onClick={() => handleFilteredPortfolio("javascript")}
-          />
+          >
+            JavaScript
+          </Button>
           <Button
-            content="Node"
             style={{
               backgroundImage:
                 portfolioType === "node"
@@ -102,7 +105,9 @@ export default function Portfolio() {
                   : null,
             }}
             onClick={() => handleFilteredPortfolio("node")}
-          />
+          >
+            Node
+          </Button>
         </div>
         <motion.div
           className={s.portfolioItems}
