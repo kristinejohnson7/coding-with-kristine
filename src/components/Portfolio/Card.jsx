@@ -110,7 +110,7 @@ const CardLink = styled(motion.div)`
       background: #262626;
       @media (max-width: 550px) {
         overflow-y: scroll;
-        max-height: 650px;
+        max-height: 600px;
         width: 90%;
       }
     `}

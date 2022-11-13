@@ -57,7 +57,7 @@ export default function NavBar() {
   return (
     <nav
       className={`${s.navbar} ${s[`${theme}`]} ${sticky ? s.sticky : ""} ${
-        window.innerWidth < 850 ? "mobile" : ""
+        window.innerWidth < 850 ? s.mobile : ""
       }`}
     >
       <div className={s.navWrapper}>
