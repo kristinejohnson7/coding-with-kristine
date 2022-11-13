@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./NavBar.scss";
+import s from "./NavBar.module.scss";
 import Switch from "react-switch";
 import logoLight from "../../assets/codingwithklogo.svg";
 import logoDark from "../../assets/darkcodingwithklogo.svg";
@@ -56,22 +56,22 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`navbar ${sticky ? "sticky" : ""} ${theme} ${
+      className={`${s.navbar} ${s[`${theme}`]} ${sticky ? s.sticky : ""} ${
         window.innerWidth < 850 ? "mobile" : ""
       }`}
     >
-      <div className="navWrapper">
-        <div className="navLogo">{setNavLogo()}</div>
-        <div className="burger" onClick={() => setShowMenu(!showMenu)}>
+      <div className={s.navWrapper}>
+        <div className={s.navLogo}>{setNavLogo()}</div>
+        <div className={s.burger} onClick={() => setShowMenu(!showMenu)}>
           <Hamburger toggled={burgerOpen} toggle={setBurgerOpen} />
         </div>
-        <ul className="navBarOptions" id={showMenu ? "hidden" : ""}>
+        <ul className={s.navBarOptions} id={showMenu ? s.hidden : ""}>
           {navListOptions.map((section) => {
             return (
               <li key={section}>
                 <button
                   onClick={() => handleClickNav(section)}
-                  className={activeLinkId === section ? "activeClass" : ""}
+                  className={activeLinkId === section ? s.activeClass : ""}
                 >
                   {section}
                 </button>
