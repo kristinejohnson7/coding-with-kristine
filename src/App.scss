@@ -78,6 +78,18 @@ h6 {
   isolation: isolate;
 }
 
+.react-switch-bg div {
+  align-items: center;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  width: 20px;
+
+  .checkIcon {
+    width: 70%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   section {
     padding-bottom: 5rem;

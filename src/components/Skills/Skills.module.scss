@@ -4,8 +4,8 @@
   position: relative;
   margin: 0 auto;
   margin-bottom: 10rem;
-  height: 515px;
-  width: 80%;
+  height: 475px;
+  width: 85%;
 
   &::before {
     background: $secondary-dark;
@@ -26,7 +26,7 @@
     background-color: $primary-light;
     border-radius: 10px;
     color: $white;
-    height: 515px;
+    height: 475px;
     left: 0;
     margin: 0 auto;
     padding: 3rem;
@@ -45,7 +45,7 @@
     }
 
     .skillText {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       margin-bottom: 1.5rem;
       padding: 0 1rem;
     }
@@ -53,7 +53,7 @@
     .skillsList {
       display: flex;
       flex-wrap: wrap;
-      font-size: 1.4rem;
+      font-size: 1.13rem;
       gap: 2.1rem;
       margin: 0 auto;
       width: 85%;
@@ -66,35 +66,30 @@
     }
   }
 
-  @media screen and (max-width: 1300px) {
-    height: 650px;
-
-    .skillsContent {
-      height: 650px;
-    }
-  }
-
-  @media screen and (max-width: 970px) {
+  @media screen and (max-width: 1000px) {
     .skillsContent {
       padding: 1.1rem;
 
       .skillsList {
-        font-size: 1.3rem;
         width: 95%;
       }
     }
   }
 
-  @media screen and (max-width: 800px) {
-    height: 750px;
+  @media screen and (max-width: 810px) {
+    height: 590px;
 
     .skillsContent {
-      height: 750px;
+      height: 590px;
     }
   }
 
   @media screen and (max-width: 610px) {
+    height: 710px;
+
     .skillsContent {
+      height: 710px;
+
       .skillsList {
         font-size: 1rem;
         width: 85%;
@@ -102,11 +97,11 @@
     }
   }
 
-  @media screen and (max-width: 500px) {
-    height: 850px;
+  @media screen and (max-width: 490px) {
+    height: 810px;
 
     .skillsContent {
-      height: 850px;
+      height: 810px;
 
       .skillText {
         font-size: 1.07rem;
@@ -114,7 +109,7 @@
     }
   }
 
-  @media screen and (max-width: 390px) {
+  @media screen and (max-width: 410px) {
     height: 950px;
 
     .skillsContent {
@@ -122,11 +117,11 @@
     }
   }
 
-  @media screen and (max-width: 360px) {
-    height: 1170px;
+  @media screen and (max-width: 340px) {
+    height: 1090px;
 
     .skillsContent {
-      height: 1170px;
+      height: 1090px;
     }
   }
 }
