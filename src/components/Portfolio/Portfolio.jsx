@@ -67,12 +67,12 @@ export default function Portfolio() {
       <div ref={portfolioRef}>
         <div className={s.portfolioHeader}>
           <Header content="Portfolio" />
-          <p className={s.portfolioIntroText}>
+          {/* <p className={s.portfolioIntroText}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
             maiores alias ducimus ullam iusto eum. Rerum eius molestias, harum
             consequuntur assumenda necessitatibus nisi quae perferendis
             explicabo blanditiis nesciunt eos optio?
-          </p>
+          </p> */}
         </div>
         <div className={s.portfolioFilter}>
           <Button
@@ -109,16 +109,7 @@ export default function Portfolio() {
             Node
           </Button>
         </div>
-        <motion.div
-          className={s.portfolioItems}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            delay: 1,
-          }}
-        >
-          {portfolioData}
-        </motion.div>
+        <div className={s.portfolioItems}>{portfolioData}</div>
       </div>
     </motion.section>
   );

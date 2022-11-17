@@ -20,7 +20,6 @@ export default function NavBar() {
   const [burgerOpen, setBurgerOpen] = useState(false);
 
   const { activeLinkId } = useContext(NavContext);
-  console.log(activeLinkId);
 
   const handleStickyNav = () => {
     if (window.scrollY >= 150) {
