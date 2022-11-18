@@ -1,6 +1,8 @@
 import { MeshReflectorMaterial } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { useEffect } from "react";
+import { Html } from "@react-three/drei";
+import s from "./Hero.module.scss";
 import { LinearEncoding, RepeatWrapping, TextureLoader } from "three";
 
 export function Ground() {
@@ -42,6 +44,11 @@ export function Ground() {
         debug={0}
         reflectorOffset={0.2}
       />
+      <Html distanceFactor={20} position={[4, 5, 0]}>
+        <h1 className={s.heroHeader}>
+          creative web <br /> development
+        </h1>
+      </Html>
     </mesh>
   );
 }

@@ -15,8 +15,6 @@ export default function Card({
   const [cardDimensions, setCardDimensions] = useState({ width: 0, height: 0 });
   const card = useRef(null);
 
-  console.log("LINK", projectLink);
-
   return (
     <Fragment>
       <CardLink

@@ -44,9 +44,9 @@ export default function Skills() {
       <div id={s[`${theme}`]} className={s.skillsContent} ref={skillsRef}>
         <Header content="Skills" />
         <p id={s[`${theme}`]} className={s.skillText}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum modi,
-          beatae voluptatibus error voluptatum accusamus deserunt? Recusandae
-          officia magnam perspiciatis qui.
+          Coding is an art form that I am constantly working to refine. I refine
+          my skills by having a drive and passion that keeps me excited to be
+          constantly learning.
         </p>
         <div className={s.skillsList}>
           <div className={s.skill}>

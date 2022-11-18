@@ -12,9 +12,17 @@
     border: 3px solid $white;
     border-radius: 5px;
     height: 47rem;
+    max-width: 1200px;
     pointer-events: none;
-    width: 80%;
     padding-bottom: 0;
+    width: 100%;
+
+    .heroHeader {
+      color: $white;
+      font-family: "Roboto Mono", monospace;
+      font-size: 2.2rem;
+      width: 700px;
+    }
   }
 
   @media screen and (max-width: 900px) {
