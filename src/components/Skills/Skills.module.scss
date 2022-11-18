@@ -5,8 +5,8 @@
   margin: 0 auto;
   margin-bottom: 10rem;
   height: 475px;
-  max-width: 1200px;
-  width: 85%;
+  max-width: 1150px;
+  width: 92%;
 
   &::before {
     background: $secondary-dark;
@@ -33,7 +33,6 @@
     padding: 3rem;
     position: absolute;
     top: 0;
-    width: 100%;
     z-index: 1;
 
     h2 {

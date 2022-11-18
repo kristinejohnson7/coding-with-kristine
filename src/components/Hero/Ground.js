@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { Html } from "@react-three/drei";
 import s from "./Hero.module.scss";
 import { LinearEncoding, RepeatWrapping, TextureLoader } from "three";
+import Typewriter from "typewriter-effect";
 
 export function Ground() {
   const [roughness, normal] = useLoader(TextureLoader, [
@@ -44,9 +45,22 @@ export function Ground() {
         debug={0}
         reflectorOffset={0.2}
       />
-      <Html distanceFactor={20} position={[4, 5, 0]}>
+      <Html distanceFactor={10} position={[3, 0, 0]}>
         <h1 className={s.heroHeader}>
-          creative web <br /> development
+          <Typewriter
+            options={{
+              strings: [
+                "creative",
+                "clean",
+                "friendly",
+                "professional",
+                "unique",
+              ],
+              autoStart: true,
+              loop: true,
+            }}
+          />{" "}
+          web development
         </h1>
       </Html>
     </mesh>
