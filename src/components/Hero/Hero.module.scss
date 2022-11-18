@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  padding: 110px 0px 0px 0px;
+  padding-top: 120px;
   position: relative;
 
   .canvas {
@@ -20,7 +20,7 @@
     .heroHeader {
       color: $white;
       font-family: "Roboto Mono", monospace;
-      font-size: 2.2rem;
+      font-size: 2rem;
       width: 700px;
     }
   }
@@ -33,7 +33,7 @@
 
   @media screen and (max-width: 625px) {
     .canvas {
-      width: 80%;
+      width: 95%;
     }
   }
 

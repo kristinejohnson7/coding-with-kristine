@@ -1,0 +1,24 @@
+.arrows {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  svg {
+    width: 30px;
+    pointer-events: none;
+  }
+  .next,
+  .prev {
+    margin: 0 0.5rem;
+    width: fit-content;
+    background-color: var(--deep-dark);
+    padding: 0.5rem 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 100;
+
+    img {
+      width: 45px;
+    }
+  }
+}
