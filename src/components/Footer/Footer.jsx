@@ -52,9 +52,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <p className={s.copyright}>
-          {/* Copyright © 2022 Kristine Johnson. All Rights Reserved */}
-        </p>
+        <p className={s.copyright}></p>
       </div>
     </section>
   );

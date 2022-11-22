@@ -11,6 +11,7 @@ import colorGen from "../assets/Projects/color-generator.png";
 import studentAPI from "../assets/Projects/studentAPI.png";
 import bookstagram from "../assets/Projects/bookstagram.png";
 import bookstagramBackend from "../assets/Projects/bookstagramBackend.png";
+import lionProDev from "../assets/Projects/lionProDev.png";
 
 export const portfolio = [
   {
@@ -127,5 +128,14 @@ export const portfolio = [
     img: bookstagramBackend,
     gitHubLink: "https://github.com/kristinejohnson7/bookstagram-backend",
     type: "node",
+  },
+  {
+    title: "Lion Pro Dev",
+    description:
+      "The Lion Pro Dev project was for a freelance client who wanted to convert their WordPress website into React. This project involved Contentful CMS and React. I created the website design and worked with the client in staged releases for various features of the website. Performance optimization was also performed by using cache, lazyloading, and other optimizations.",
+    img: lionProDev,
+    gitHubLink: "https://github.com/kristinejohnson7/lion-pro-dev",
+    projectLink: "https://lionprodev.com/",
+    type: "react",
   },
 ];
