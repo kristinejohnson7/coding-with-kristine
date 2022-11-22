@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { motion } from "framer-motion";
-import { Fragment, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import s from "./Card.module.scss";
 import Button from "../Button/Button";
 
@@ -16,7 +16,7 @@ export default function Card({
   const card = useRef(null);
 
   return (
-    <Fragment>
+    <>
       <CardLink
         ref={card}
         isCardOpened={isCardOpened}
@@ -64,7 +64,7 @@ export default function Card({
         )}
       </CardLink>
       {isCardOpened && (
-        <Fragment>
+        <>
           <div
             style={{
               width: cardDimensions.width,
@@ -76,9 +76,9 @@ export default function Card({
             animate={{ opacity: 1 }}
             onClick={() => setIsCardOpened(false)}
           />
-        </Fragment>
+        </>
       )}
-    </Fragment>
+    </>
   );
 }
 

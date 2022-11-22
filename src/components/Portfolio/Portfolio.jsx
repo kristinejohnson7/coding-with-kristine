@@ -10,7 +10,7 @@ import { useInView } from "react-intersection-observer";
 import { useNav } from "../../hooks/useNav";
 
 const boxVariant = {
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+  visible: { opacity: 1, scale: 1 },
   hidden: { opacity: 0, scale: 0 },
 };
 
@@ -38,14 +38,15 @@ export default function Portfolio() {
   }, [control, inView, desktop]);
 
   const portfolioData = filteredPortfolio.map((item, index) => {
+    const { title, description, img, gitHubLink, projectLink } = item;
     return (
       <Card
         key={`card-${index}`}
-        title={item.title}
-        description={item.description}
-        imgSrc={item.img}
-        gitHubLink={item.gitHubLink}
-        projectLink={item.projectLink}
+        title={title}
+        description={description}
+        imgSrc={img}
+        gitHubLink={gitHubLink}
+        projectLink={projectLink}
       />
     );
   });
