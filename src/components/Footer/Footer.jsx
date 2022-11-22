@@ -41,7 +41,7 @@ export default function Footer() {
                 <div className={s.icon}>
                   <i className="fa-brands fa-github-alt fa-lg"></i>
                 </div>
-                <a href="https://github.com/">GitHub</a>
+                <a href="https://github.com/kristinejohnson7">GitHub</a>
               </li>
               <li>
                 <div className={s.icon}>
