@@ -1,5 +1,4 @@
 import React, { useRef, useMemo, useContext } from "react";
-// eslint-disable-next-line
 import { OrbitControls } from "@react-three/drei";
 import {
   RigidBody,
@@ -67,7 +66,7 @@ export default function ContactExperience() {
 
   return (
     <>
-      {/* <OrbitControls makeDefault minDistance={12} /> */}
+      <OrbitControls makeDefault minDistance={12} />
 
       <directionalLight castShadow position={[1, 2, 3]} intensity={1.5} />
       <ambientLight intensity={0.5} />
