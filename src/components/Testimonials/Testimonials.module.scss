@@ -24,10 +24,6 @@
     .testimonialWrapper {
       background-color: $black;
       color: $white;
-
-      .testimonialInfo .title {
-        color: $secondary-dark;
-      }
     }
   }
 
@@ -42,46 +38,6 @@
     position: relative;
     max-width: 700px;
     margin: 0 auto;
-
-    .testimonialInfo {
-      width: 100%;
-      height: 475px;
-      padding: 0rem 3rem 3rem;
-      border-radius: 12px;
-
-      .image {
-        margin: 0 auto;
-        position: relative;
-        width: 80px;
-        height: 72px;
-
-        img {
-          border-radius: 50%;
-          height: 80px;
-          position: absolute;
-          top: -20px;
-          width: 80px;
-        }
-      }
-
-      .name {
-        font-size: 1.4rem;
-        font-weight: 500;
-        margin-bottom: 0;
-      }
-
-      .title {
-        color: $primary-light;
-        font-size: 1.4rem;
-        font-weight: 500;
-        margin-bottom: 1rem;
-      }
-
-      .description {
-        font-size: 1.125rem;
-        text-align: justify;
-      }
-    }
   }
 
   .arrows {
@@ -112,49 +68,6 @@
   @media screen and (max-width: 950px) {
     .testimonialWrapper {
       width: 90%;
-
-      .testimonialInfo {
-        padding-left: 1.3rem;
-        padding-right: 1.3rem;
-      }
-    }
-  }
-
-  @media screen and (max-width: 810px) {
-    .testimonialWrapper .testimonialInfo {
-      height: 460px;
-    }
-  }
-
-  @media screen and (max-width: 720px) {
-    .testimonialWrapper .testimonialInfo {
-      height: 515px;
-    }
-  }
-
-  @media screen and (max-width: 600px) {
-    margin-bottom: 3rem;
-  }
-
-  @media screen and (max-width: 550px) {
-    .testimonialWrapper .testimonialInfo {
-      height: 560px;
-    }
-  }
-
-  @media screen and (max-width: 475px) {
-    .testimonialWrapper .testimonialInfo {
-      height: 620px;
-
-      .description {
-        font-size: 1.1rem;
-      }
-    }
-  }
-
-  @media screen and (max-width: 375px) {
-    .testimonialWrapper .testimonialInfo {
-      height: 710px;
     }
   }
 }

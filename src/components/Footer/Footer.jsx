@@ -33,7 +33,11 @@ export default function Footer() {
                 <div className={s.icon}>
                   <i className="fa-brands fa-linkedin-in fa-lg"></i>
                 </div>
-                <a href="https://www.linkedin.com/in/kristine-johnson7/">
+                <a
+                  href="https://www.linkedin.com/in/kristine-johnson7/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   LinkedIn
                 </a>
               </li>
@@ -41,13 +45,25 @@ export default function Footer() {
                 <div className={s.icon}>
                   <i className="fa-brands fa-github-alt fa-lg"></i>
                 </div>
-                <a href="https://github.com/kristinejohnson7">GitHub</a>
+                <a
+                  href="https://github.com/kristinejohnson7"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
               </li>
               <li>
                 <div className={s.icon}>
                   <i className="fa-brands fa-medium fa-lg"></i>
                 </div>
-                <a href="https://medium.com/@kristinethejohnson">Blog</a>
+                <a
+                  href="https://medium.com/@kristinethejohnson"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Blog
+                </a>
               </li>
             </ul>
           </div>
