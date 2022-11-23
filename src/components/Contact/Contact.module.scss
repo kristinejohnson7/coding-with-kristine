@@ -87,6 +87,10 @@
       flex-direction: column;
       gap: 3rem;
 
+      .threeExperience {
+        border: 3px solid $white;
+      }
+
       .line {
         border-top: 3px solid #7ecbc7;
         border-left: none;
