@@ -118,7 +118,7 @@ export const portfolio = [
       "The Bookstagram project involved creating both a front-end and back-end for an Instagram-like app. As always I had a lot of fun designing the application and wanted to push myself to go above and beyond the project requirements. The project requirements were: the user must be able to create an account, login, the application displays a feed with posts, the user can delete and create posts, the front end must also be connected to AWS S3. In addition to these requirements I added the feature for users to like posts and have a display picture, as well as user information they could update.",
     img: bookstagram,
     gitHubLink: "https://github.com/kristinejohnson7/bookstagram-frontend",
-    // projectLink: "https://bookstagram-7.vercel.app",
+    projectLink: "https://bookstagram-7.vercel.app",
     type: "react",
   },
   {
